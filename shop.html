@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Shop | MOCA Art India</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- GSAP & SplitType -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="font-sans antialiased text-primary selection:bg-primary selection:text-white bg-white">
+    <!-- Institutional Preloader -->
+
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+        <div id="header-container"
+            class="max-w-[1440px] mx-auto px-4 md:px-12 h-24 flex items-center justify-between transition-all duration-300">
+            <a class="group flex items-center gap-3 text-white transition-colors duration-500 header-text"
+                href="index.html" data-discover="true">
+                <img src="assets/img/logo-dark.png" alt="Moca Logo" class="h-9 w-auto logo-dark">
+                <img src="assets/img/logo.png" alt="Moca Logo" class="h-9 w-auto logo-light">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="about.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">About</a>
+                <a href="gallery.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Gallery</a>
+                <a href="residency.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Residency</a>
+                <a href="workshop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Workshops</a>
+                <a href="events.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Events</a>
+                <a href="shop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Shop</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden lg:flex items-center gap-2 text-sm font-medium text-white hover:text-gold transition-all header-text">
+                    <span>Book Appointment</span>
+                </button>
+                <button
+                    class="bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gold transition-all flex items-center gap-2 text-white shadow-lg">
+                    <span>Get Tickets</span>
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                </button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white hover:text-gold transition-colors p-2 z-50 header-text">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-primary h-screen z-60 translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex items-center justify-between mb-16">
+                    <div class="flex items-center gap-3 text-white">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="48" height="48"></rect>
+                            <circle cx="76" cy="24" r="24"></circle>
+                            <path d="M24 52 A 24 24 0 0 0 24 100 V 52 Z"></path>
+                            <path d="M52 100 L76 52 L100 100 Z"></path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-extrabold tracking-tighter leading-none uppercase">Moca</span>
+                            <span
+                                class="text-[8px] font-bold tracking-[0.2em] uppercase leading-none mt-0.5 opacity-70">Gandhinagar</span>
+                        </div>
+                    </div>
+                    <button id="close-menu-btn" class="text-white hover:text-gold transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-8">
+                    <a href="about.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Gallery</a>
+                    <a href="residency.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Residency</a>
+                    <a href="workshop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Workshops</a>
+                    <a href="events.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
+                </nav>
+                <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+                    <button
+                        class="bg-gold hover:bg-surface hover:text-gold transition-all duration-500 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest text-center shadow-gold/20 shadow-xl">
+                        Book Appointment
+                    </button>
+                    <div class="flex justify-center gap-6">
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-vimeo-v text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-primary text-white">
+            <div class="absolute inset-0 opacity-40">
+                <img class="w-full h-full object-cover animate-ken-burns" src="assets/img/gallery-hero.png"
+                    alt="MOCA Shop Hero">
+            </div>
+            <div class="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-primary/90"></div>
+            <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
+                <span class="reveal-subtitle text-gold! mb-6 block">The Museum Shop</span>
+                <h1 class="reveal-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Curated
+                    <span class="not-italic font-light opacity-90">Objects</span>
+                </h1>
+                <p class="reveal-text text-lg max-w-xl mx-auto text-white/70 leading-relaxed font-light">
+                    Explore a selection of limited edition prints, curatorial publications, and archival sculptures.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="py-12 border-b border-black/5 bg-white/90 backdrop-blur-md z-40">
+            <div
+                class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="flex flex-wrap items-center gap-4 md:gap-10">
+                    <button data-tab="all"
+                        class="tab-btn text-[10px] font-black uppercase tracking-[0.3em] pb-1 cursor-pointer transition-all border-b-2 border-gold text-primary">All
+                        Collections</button>
+                    <button data-tab="prints"
+                        class="tab-btn text-[10px] font-black uppercase tracking-[0.3em] pb-1 cursor-pointer transition-all text-secondary hover:text-primary">Limited
+                        Prints</button>
+                    <button data-tab="sculptures"
+                        class="tab-btn text-[10px] font-black uppercase tracking-[0.3em] pb-1 cursor-pointer transition-all text-secondary hover:text-primary">Sculptures</button>
+                    <button data-tab="publications"
+                        class="tab-btn text-[10px] font-black uppercase tracking-[0.3em] pb-1 cursor-pointer transition-all text-secondary hover:text-primary">Publications</button>
+                </div>
+                <div class="relative w-full md:w-64">
+                    <input type="text" placeholder="Search Archives..."
+                        class="w-full bg-surface border-none rounded-full px-6 py-3 text-xs focus:ring-1 focus:ring-gold outline-none">
+                    <i
+                        class="fas fa-search absolute right-6 top-1/2 -translate-y-1/2 text-secondary/40 text-[10px]"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="py-24 md:py-32">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div id="shop-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
+
+                    <!-- Product 1 -->
+                    <div class="shop-item group reveal-card" data-category="prints">
+                        <a href="shop-detail.html" class="block">
+                            <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                <img src="assets/img/art-2.png"
+                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    alt="Chronos Lithograph">
+                                <div
+                                    class="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest text-primary shadow-sm">
+                                    Limited Edition</div>
+                                <div
+                                    class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span
+                                        class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Serigraph
+                                        Print</span>
+                                    <h3 class="font-serif text-2xl text-primary mb-1">Chronos Lithograph</h3>
+                                    <p
+                                        class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                        Hand-signed Edition of 50</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-lg font-medium text-primary">₹32,500</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="shop-item group reveal-card" data-category="sculptures">
+                        <a href="shop-detail.html" class="block">
+                            <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                <img src="assets/img/art-1.png"
+                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    alt="Ethereal Form">
+                                <div
+                                    class="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest text-primary shadow-sm">
+                                    Archive Piece</div>
+                            </div>
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span
+                                        class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Bronze
+                                        Sculpture</span>
+                                    <h3 class="font-serif text-2xl text-primary mb-1">Ethereal Form I</h3>
+                                    <p
+                                        class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                        Commissioned Study</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-lg font-medium text-primary">₹1,85,000</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="shop-item group reveal-card" data-category="publications">
+                        <a href="shop-detail.html" class="block">
+                            <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                <img src="assets/img/item-1.png"
+                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    alt="The MOCA Monograph">
+                            </div>
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span
+                                        class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Curatorial
+                                        Publication</span>
+                                    <h3 class="font-serif text-2xl text-primary mb-1">MOCA Annual Monograph</h3>
+                                    <p
+                                        class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                        Hardcover, 340 Pages</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-lg font-medium text-primary">₹4,800</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="shop-item group reveal-card" data-category="sculptures">
+                        <a href="shop-detail.html" class="block">
+                            <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                <img src="assets/img/item-2.png"
+                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    alt="Heritage Totem">
+                            </div>
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span
+                                        class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Terracotta
+                                        Work</span>
+                                    <h3 class="font-serif text-2xl text-primary mb-1">Heritage Totem</h3>
+                                    <p
+                                        class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                        Traditional Guild Work</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-lg font-medium text-primary">₹18,200</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="shop-item group reveal-card" data-category="prints">
+                        <a href="shop-detail.html" class="block">
+                            <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                <img src="assets/img/art-3.png"
+                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    alt="Digital Void">
+                                <div
+                                    class="absolute top-6 left-6 bg-primary/90 backdrop-blur-md px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest text-white shadow-sm">
+                                    Sold Out</div>
+                            </div>
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <span
+                                        class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Experimental
+                                        Print</span>
+                                    <h3 class="font-serif text-2xl text-primary mb-1">The Digital Void</h3>
+                                    <p
+                                        class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                        Giclée on Archival Paper</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-lg font-medium text-primary opacity-40 italic">Waitlisted</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-surface pt-20 md:pt-32 pb-16">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-24">
+                <div class="sm:col-span-2 md:col-span-5">
+                    <a class="group flex items-center gap-3 text-primary mb-8 md:mb-10" href="#/">
+                        <img src="assets/img/logo-dark.png" alt="" srcset="" class="max-w-[200px] w-full">
+                    </a>
+                    <p class="text-secondary text-base leading-relaxed max-w-sm mb-10 opacity-80">
+                        The Museum of Contemporary Art India is a premier institution dedicated to the intersection of
+                        traditional heritage and future-forward artistic expression.
+                    </p>
+                    <div class="flex items-center gap-5">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
+                    <ul class="space-y-4">
+                        <li><a href="gallery.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Current
+                                Exhibitions</a></li>
+                        <li><a href="residency.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
+                                Residency</a></li>
+                        <li><a href="workshop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
+                                Labs</a></li>
+                        <li><a href="shop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
+                                Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Information</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">About
+                                MOCA</a></li>
+                        <li><a href="press.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Press &
+                                Media</a></li>
+                        <li><a href="#" class="text-sm text-secondary hover:text-primary transition-colors">Support
+                                Us</a></li>
+                        <li><a href="contact.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-2 md:col-span-3">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Visit</h4>
+                    <address class="not-italic text-sm text-secondary space-y-6 leading-relaxed ">
+                        <p>H-102, Art District,<br>Knowledge Corridor, Gandhinagar,<br>Gujarat 382007</p>
+                        <p>Tuesday – Sunday: 11am – 8pm<br>Monday: Closed</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p class="text-[10px] font-bold text-secondary uppercase tracking-widest text-center md:text-left">©
+                    2024 MOCA ART INDIA. ALL
+                    RIGHTS RESERVED.</p>
+                <div class="flex items-center gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Terms
+                        of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

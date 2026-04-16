@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-background: #faf5ef;
+  --color-surface: #faf5ef;
+  --color-primary: #000000;
+  --color-secondary: #333333;
+  --color-gold: #b4924c;
+  --color-border: #e0e0e0;
+  --color-white: #ffffff;
+
+  --radius-4xl: 2rem;
+
+  --animate-ken-burns: ken-burns 20s ease-in-out infinite alternate;
+  --animate-fade-in-up: fade-in-up 1s ease-out forwards;
+
+  @keyframes ken-burns {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.15) translate(-2%, -2%); }
+  }
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Custom Styles migrated from style.css */
+
+#header {
+    transition: background-color 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;
+}
+
+#header-container {
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swiper-pagination-bullet-active {
+    width: 2rem !important;
+    opacity: 1 !important;
+    background: white !important;
+}
+header.scrolled .logo-dark {
+            display: block;
+        }
+
+        header.scrolled .logo-light {
+            display: none;
+        }
+
+        header .logo-dark {
+            display: none;
+        }
+
+        header .logo-light {
+            display: block;
+        }

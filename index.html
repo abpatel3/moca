@@ -1,0 +1,1035 @@
+<html lang="en" class="scroll-smooth fontawesome-i2svg-active fontawesome-i2svg-complete">
+
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Art Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- GSAP & SplitType -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="font-sans antialiased text-primary selection:bg-primary selection:text-white">
+
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+        <div id="header-container"
+            class="max-w-[1440px] mx-auto px-4 md:px-12 h-24 flex items-center justify-between transition-all duration-300">
+            <a class="group flex items-center gap-3 text-white transition-colors duration-500 header-text"
+                href="index.html" data-discover="true">
+                <img src="assets/img/logo-dark.png" alt="Moca Logo" class="h-9 w-auto logo-dark">
+                <img src="assets/img/logo.png" alt="Moca Logo" class="h-9 w-auto logo-light">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="about.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">About</a>
+                <a href="gallery.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Gallery</a>
+                <a href="residency.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Residency</a>
+                <a href="workshop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Workshops</a>
+                <a href="events.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Events</a>
+                <a href="shop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Shop</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden lg:flex items-center gap-2 text-sm font-medium text-white hover:text-gold transition-all header-text">
+                    <span>Book Appointment</span>
+                </button>
+                <button
+                    class="bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gold transition-all flex items-center gap-2 text-white shadow-lg">
+                    <span>Get Tickets</span>
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                </button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white hover:text-gold transition-colors p-2 z-50 header-text">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-primary h-screen z-60 translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex items-center justify-between mb-16">
+                    <div class="flex items-center gap-3 text-white">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="5" width="42" height="42"></rect>
+                            <circle cx="74" cy="26" r="21"></circle>
+                            <path d="M47 74 A 21 21 0 0 1 5 74 L 5 74 Z" transform="rotate(-90 26 74) translate(21, 0)">
+                            </path>
+                            <path d="M47 53 V95 H5 C5 95 5 53 47 53 Z M 26 95 A 21 21 0 0 0 26 53 A 21 21 0 0 0 26 95"
+                                fill-rule="evenodd" fill="transparent"></path>
+                            <g>
+                                <rect x="0" y="0" width="48" height="48"></rect>
+                                <circle cx="74" cy="24" r="24"></circle>
+                                <path d="M24 52 A 24 24 0 0 0 24 100 V 52 Z"></path>
+                                <path d="M52 100 L76 52 L100 100 Z"></path>
+                            </g>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-extrabold tracking-tighter leading-none uppercase">Moca</span>
+                            <span
+                                class="text-[8px] font-bold tracking-[0.2em] uppercase leading-none mt-0.5 opacity-70">Gandhinagar</span>
+                        </div>
+                    </div>
+                    <button id="close-menu-btn" class="text-white hover:text-gold transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-8">
+                    <a href="about.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Gallery</a>
+                    <a href="residency.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Residency</a>
+                    <a href="workshop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Workshops</a>
+                    <a href="events.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
+                </nav>
+                <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+                    <button
+                        class="bg-gold hover:bg-surface hover:text-gold transition-all duration-500 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest text-center shadow-gold/20 shadow-xl">
+                        Book Appointment
+                    </button>
+                    <div class="flex justify-center gap-6">
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-vimeo-v text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-full w-full overflow-hidden">
+            <div class="swiper hero-swiper h-full w-full">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide relative overflow-hidden">
+                        <div class="absolute inset-0">
+                            <img class="w-full h-full object-cover opacity-60 mix-blend-overlay animate-ken-burns"
+                                src="assets/img/hero-1.png" alt="Modern Gallery 1">
+                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent"></div>
+                            <div
+                                class="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent opacity-80">
+                            </div>
+                        </div>
+                        <div
+                            class="relative max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pb-20 mt-10">
+                            <div class="max-w-3xl slide-content">
+                                <h1
+                                    class="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-tight mb-6 hero-title">
+                                    Experience Contemporary Art
+                                </h1>
+                                <p
+                                    class="text-base md:text-xl text-white/80 font-light max-w-xl mb-10 leading-relaxed hero-text">
+                                    Discover a curated collection of modern masterpieces in a space designed to inspire
+                                    and provoke thought.
+                                </p>
+                                <div class="flex flex-wrap items-center gap-4">
+                                    <button
+                                        class="bg-white text-primary px-8 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition-all flex items-center gap-3 hero-btn">
+                                        <span>Explore Gallery</span>
+                                        <div
+                                            class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                            <i class="text-xs fas fa-arrow-right"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide relative overflow-hidden">
+                        <div class="absolute inset-0">
+                            <img class="w-full h-full object-cover opacity-60 mix-blend-overlay animate-ken-burns"
+                                src="assets/img/hero-2.png" alt="Modern Gallery 2">
+                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent"></div>
+                            <div
+                                class="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent opacity-80">
+                            </div>
+                        </div>
+                        <div
+                            class="relative max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pb-20 mt-10">
+                            <div class="max-w-3xl slide-content">
+                                <h1
+                                    class="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-tight mb-6 hero-title">
+                                    Discover Digital Visions
+                                </h1>
+                                <p
+                                    class="text-base md:text-xl text-white/80 font-light max-w-xl mb-10 leading-relaxed hero-text">
+                                    Exploring the intersection of technology and creativity in our new media wing.
+                                </p>
+                                <div class="flex flex-wrap items-center gap-4">
+                                    <button
+                                        class="bg-white text-primary px-8 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition-all flex items-center gap-3 hero-btn">
+                                        <span>View Collections</span>
+                                        <div
+                                            class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                            <i class="text-xs fas fa-arrow-right"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide relative overflow-hidden">
+                        <div class="absolute inset-0">
+                            <img class="w-full h-full object-cover opacity-60 mix-blend-overlay animate-ken-burns"
+                                src="assets/img/hero-3.png" alt="Modern Gallery 3">
+                            <div class="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent"></div>
+                            <div
+                                class="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-transparent opacity-80">
+                            </div>
+                        </div>
+                        <div
+                            class="relative max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pb-20 mt-10">
+                            <div class="max-w-3xl slide-content">
+                                <h1
+                                    class="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-tight mb-6 hero-title">
+                                    Curating Emotional Journeys</h1>
+                                <p
+                                    class="text-base md:text-xl text-white/80 font-light max-w-xl mb-10 leading-relaxed hero-text">
+                                    A supportive environment designed to connect artists, collectors, and enthusiasts.
+                                </p>
+                                <div class="flex flex-wrap items-center gap-4">
+                                    <button
+                                        class="bg-white text-primary px-8 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition-all flex items-center gap-3 hero-btn">
+                                        <span>Join Community</span>
+                                        <div
+                                            class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                            <i class="text-xs fas fa-arrow-right"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Controls -->
+                <div class="absolute bottom-12 right-6 lg:right-12 z-20 flex items-center gap-6">
+                    <div class="flex gap-2">
+                        <button
+                            class="hero-prev w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
+                            <i class="fas fa-chevron-left text-sm"></i>
+                        </button>
+                        <button
+                            class="hero-next w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Swiper Pagination (left side) 
+                <div class="absolute bottom-12 left-6 lg:left-12 z-20 flex items-center gap-6">
+                    <div class="swiper-pagination !static !w-auto flex gap-2"></div>
+                </div>-->
+            </div>
+
+            <!-- Tour Button (Relocated to bottom-left for balance) -->
+
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-surface overflow-hidden">
+            <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-accent rounded-3xl md:rounded-4xl -z-10 transform -rotate-2">
+                        </div>
+                        <div
+                            class="rounded-3xl md:rounded-4xl overflow-hidden h-[400px] md:h-[600px] hover-scale about-img shadow-2xl">
+                            <img class="w-full h-full object-cover" src="assets/img/moca-india.png"
+                                alt="Modern MOCA India gallery interior">
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-32 h-32 md:w-48 md:h-48 rounded-3xl md:rounded-4xl overflow-hidden border-4 md:border-8 border-surface hidden sm:block hover-scale about-img-small shadow-xl">
+                            <img class="w-full h-full object-cover"
+                                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/bb35d4faf8-0176cc8da3d65e3150dc.png"
+                                alt="Abstract ceramic sculpture">
+                        </div>
+                    </div>
+
+                    <div class="lg:pl-16">
+                        <div class="mb-8 md:mb-14">
+                            <span
+                                class="text-[10px] font-black uppercase tracking-[0.6em] text-gold block mb-4 md:mb-6 px-1 about-subtitle">The
+                                Heritage of Innovation</span>
+                            <h2
+                                class="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] text-primary about-title">
+                                Introduction of <br>
+                                <span class="italic font-light text-gold opacity-90">MOCA Art India</span>
+                            </h2>
+                            <div class="w-16 h-[1.5px] bg-gold mt-6 md:mt-10 rounded-full about-line"></div>
+                        </div>
+
+                        <p
+                            class="text-secondary text-base md:text-lg mb-8 md:mb-10 leading-relaxed max-w-xl about-text">
+                            MOCA India serves as a premier destination for the preservation and exhibition of modern
+                            masterpieces from the subcontinent and beyond. We envision a space where tradition meets the
+                            experimental edge of global creativity.
+                        </p>
+
+                        <button
+                            class="mt-6 flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] text-primary group/btn transition-all about-btn">
+                            <span>More About Us</span>
+                            <div
+                                class="w-12 h-px bg-gold transform group-hover/btn:translate-x-3 transition-transform duration-500">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-16 md:py-24">
+            <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+                    <div class="max-w-3xl">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-[0.5em] text-gold block mb-4 md:mb-6 reveal-subtitle">Curated
+                            Selection</span>
+                        <h2 class="font-serif text-3xl md:text-5xl mb-4 text-primary leading-tight reveal-title">Explore
+                            the <span class="italic font-light text-gold opacity-90">Collection</span></h2>
+                        <div class="w-16 h-[1.5px] bg-gold mt-4 rounded-full reveal-line"></div>
+                        <p class="text-secondary text-sm md:text-base leading-relaxed mt-6 max-w-xl reveal-text">
+                            Discover a world of
+                            artistic
+                            expression, bridging the gap between historical heritage and the experimental future.</p>
+                    </div>
+                    <a href="gallery.html"
+                        class="flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] text-primary group/btn transition-all shrink-0 reveal-btn">
+                        <span>View Full Gallery</span>
+                        <div
+                            class="w-12 h-px bg-gold transform group-hover/btn:translate-x-3 transition-transform duration-500">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Gallery Card 1 -->
+                    <div class="group cursor-pointer reveal-card">
+                        <div
+                            class="rounded-[2.5rem] overflow-hidden h-[400px] md:h-[500px] mb-6 md:mb-8 relative shadow-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/art-1.png" alt="Abstract Artwork 1">
+                            <div
+                                class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-white text-primary flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500 shadow-2xl">
+                                    <i class="fas fa-expand-alt text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start justify-between px-4">
+                            <div>
+                                <h3 class="font-serif text-2xl mb-1">Ethereal Forms</h3>
+                                <p class="text-sm text-secondary font-medium uppercase tracking-widest">Mixed Media •
+                                    2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Card 2 -->
+                    <div class="group cursor-pointer md:mt-16 reveal-card">
+                        <div class="rounded-[2.5rem] overflow-hidden h-[500px] mb-8 relative shadow-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/art-2.png" alt="Modern Sculpture 2">
+                            <div
+                                class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-white text-primary flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500 shadow-2xl">
+                                    <i class="fas fa-expand-alt text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start justify-between px-4">
+                            <div>
+                                <h3 class="font-serif text-2xl mb-1">Silent Dialogue</h3>
+                                <p class="text-sm text-secondary font-medium uppercase tracking-widest">Marble Sculpture
+                                    • 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Card 3 -->
+                    <div class="group cursor-pointer reveal-card">
+                        <div class="rounded-[2.5rem] overflow-hidden h-[500px] mb-8 relative shadow-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/art-3.png" alt="Digital Vision 3">
+                            <div
+                                class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-white text-primary flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500 shadow-2xl">
+                                    <i class="fas fa-expand-alt text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start justify-between px-4">
+                            <div>
+                                <h3 class="font-serif text-2xl mb-1">Urban Geometry</h3>
+                                <p class="text-sm text-secondary font-medium uppercase tracking-widest">Digital Print •
+                                    2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artist Residency Section -->
+        <section id="residency" class="py-16 md:py-24 bg-surface">
+            <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-8">
+                    <div class="max-w-3xl">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-[0.5em] text-gold block mb-4 md:mb-6 reveal-subtitle">Educational
+                            Pillar</span>
+                        <h2 class="font-serif text-3xl md:text-5xl mb-4 text-primary leading-tight reveal-title">Artist
+                            <span class="italic font-light text-gold opacity-90">Residency</span>
+                        </h2>
+                        <div class="w-16 h-[1.5px] bg-gold mt-4 rounded-full reveal-line"></div>
+                        <p class="text-secondary text-sm md:text-base leading-relaxed mt-6 max-w-xl reveal-text">
+                            Supporting creators
+                            through
+                            specialized space, resources, and institutional dialogue.</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] text-primary group/btn transition-all shrink-0 reveal-btn">
+                        <span>Apply Now</span>
+                        <div
+                            class="w-12 h-px bg-gold transform group-hover/btn:translate-x-3 transition-transform duration-500">
+                        </div>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                    <!-- Residency Card 1 -->
+                    <div class="group cursor-pointer reveal-card">
+                        <div class="relative rounded-[2.5rem] overflow-hidden h-[450px] mb-8 shadow-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/res-1.png" alt="Studio Access">
+                            <div
+                                class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                            </div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Spring
+                                    2024</span>
+                                <h3 class="font-serif text-2xl text-white">Studio Access Program</h3>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed px-2">3-month fully funded residency including
+                            24/7 private studio and monthly stipend.</p>
+                    </div>
+
+                    <!-- Residency Card 2 -->
+                    <div class="group cursor-pointer md:mt-12 reveal-card">
+                        <div class="relative rounded-[2.5rem] overflow-hidden h-[450px] mb-8 shadow-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/res-2.png" alt="Materials & Process">
+                            <div
+                                class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                            </div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Summer
+                                    2024</span>
+                                <h3 class="font-serif text-2xl text-white">Materials & Process</h3>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed px-2">Focus on sculptural practices with full
+                            access to specialized ceramic and metal workshops.</p>
+                    </div>
+
+                    <!-- Residency Card 3 -->
+                    <div class="group cursor-pointer reveal-card">
+                        <div class="relative rounded-[2.5rem] overflow-hidden h-[450px] mb-8 shadow-xl">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/res-3.png" alt="Digital Arts Fellowship">
+                            <div
+                                class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                            </div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Fall
+                                    2024</span>
+                                <h3 class="font-serif text-2xl text-white">Digital Arts Fellowship</h3>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed px-2">For artists pushing the boundaries of VR,
+                            generative AI, and immersive digital installations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop" class="py-24">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+                    <div class="max-w-3xl">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-[0.5em] text-gold block mb-6 reveal-subtitle">Artisanal
+                            Atelier</span>
+                        <h2 class="font-serif text-4xl md:text-5xl mb-4 text-primary reveal-title">Works <span
+                                class="italic font-light text-gold opacity-90">for Sale</span></h2>
+                        <div class="w-16 h-[1.5px] bg-gold mt-4 rounded-full reveal-line"></div>
+                        <p class="text-secondary text-base leading-relaxed mt-4 max-w-xl reveal-text">A specialized
+                            space for
+                            specialized dialogues, institutional resources, and museum-grade artisanal works.</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] text-primary group/btn transition-all shrink-0 reveal-btn">
+                        <span>View Shop</span>
+                        <div
+                            class="w-12 h-px bg-gold transform group-hover/btn:translate-x-3 transition-transform duration-500">
+                        </div>
+                    </button>
+                </div>
+
+                <div class="relative group/shop">
+                    <div class="swiper shop-swiper">
+                        <div class="swiper-wrapper h-auto!">
+                            <!-- Product 1 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="shop-item group">
+                                    <a href="shop-detail.html" class="block">
+                                        <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                            <img src="assets/img/art-2.png"
+                                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                                alt="Chronos Lithograph">
+                                            <div
+                                                class="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest text-primary shadow-sm">
+                                                Limited Edition</div>
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start justify-between">
+                                            <div>
+                                                <span
+                                                    class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Serigraph
+                                                    Print</span>
+                                                <h3 class="font-serif text-2xl text-primary mb-1">Chronos Lithograph
+                                                </h3>
+                                                <p
+                                                    class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                                    Hand-signed Edition of 50</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <span class="text-lg font-medium text-primary">₹32,500</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="shop-item group">
+                                    <a href="shop-detail.html" class="block">
+                                        <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                            <img src="assets/img/art-1.png"
+                                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                                alt="Ethereal Form">
+                                            <div
+                                                class="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest text-primary shadow-sm">
+                                                Archive Piece</div>
+                                        </div>
+                                        <div class="flex items-start justify-between">
+                                            <div>
+                                                <span
+                                                    class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Bronze
+                                                    Sculpture</span>
+                                                <h3 class="font-serif text-2xl text-primary mb-1">Ethereal Form I</h3>
+                                                <p
+                                                    class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                                    Commissioned Study</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <span class="text-lg font-medium text-primary">₹1,85,000</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="shop-item group">
+                                    <a href="shop-detail.html" class="block">
+                                        <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                            <img src="assets/img/item-1.png"
+                                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                                alt="The MOCA Monograph">
+                                        </div>
+                                        <div class="flex items-start justify-between">
+                                            <div>
+                                                <span
+                                                    class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Curatorial
+                                                    Publication</span>
+                                                <h3 class="font-serif text-2xl text-primary mb-1">MOCA Annual Monograph
+                                                </h3>
+                                                <p
+                                                    class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                                    Hardcover, 340 Pages</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <span class="text-lg font-medium text-primary">₹4,800</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Product 4 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="shop-item group">
+                                    <a href="shop-detail.html" class="block">
+                                        <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                            <img src="assets/img/item-2.png"
+                                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                                alt="Heritage Totem">
+                                        </div>
+                                        <div class="flex items-start justify-between">
+                                            <div>
+                                                <span
+                                                    class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Terracotta
+                                                    Work</span>
+                                                <h3 class="font-serif text-2xl text-primary mb-1">Heritage Totem</h3>
+                                                <p
+                                                    class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                                    Traditional Guild Work</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <span class="text-lg font-medium text-primary">₹18,200</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Product 5 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="shop-item group">
+                                    <a href="shop-detail.html" class="block">
+                                        <div class="relative aspect-4/5 overflow-hidden rounded-[32px] bg-surface mb-8">
+                                            <img src="assets/img/art-3.png"
+                                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                                alt="Digital Void">
+                                            <div
+                                                class="absolute top-6 left-6 bg-primary/90 backdrop-blur-md px-4 py-2 rounded-full text-[8px] font-black uppercase tracking-widest text-white shadow-sm">
+                                                Sold Out</div>
+                                        </div>
+                                        <div class="flex items-start justify-between">
+                                            <div>
+                                                <span
+                                                    class="text-[9px] font-black uppercase tracking-[0.2em] text-gold mb-2 block">Experimental
+                                                    Print</span>
+                                                <h3 class="font-serif text-2xl text-primary mb-1">The Digital Void</h3>
+                                                <p
+                                                    class="text-[10px] text-secondary opacity-60 uppercase font-black tracking-widest">
+                                                    Giclée on Archival Paper</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <span
+                                                    class="text-lg font-medium text-primary opacity-40 italic">Waitlisted</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Navigation (Bottom Centered) -->
+                    <div class="flex items-center gap-6 mt-10 justify-center">
+                        <button
+                            class="shop-prev w-14 h-14 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-gold hover:text-white hover:border-gold transition-all duration-300 disabled:opacity-30">
+                            <i class="fas fa-arrow-left text-sm"></i>
+                        </button>
+                        <button
+                            class="shop-next w-14 h-14 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-gold hover:text-white hover:border-gold transition-all duration-300 disabled:opacity-30">
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events & News Section -->
+        <section id="events" class="py-24 bg-surface">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+                    <div class="max-w-3xl">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-[0.5em] text-gold block mb-6 reveal-subtitle">Journal
+                            &
+                            Dialogues</span>
+                        <h2 class="font-serif text-4xl md:text-5xl mb-4 text-primary reveal-title">Events & <span
+                                class="italic font-light text-gold opacity-90">News</span></h2>
+                        <div class="w-16 h-[1.5px] bg-gold mt-4 rounded-full reveal-line"></div>
+                        <p class="text-secondary text-base leading-relaxed mt-4 max-w-xl reveal-text">Stay engaged with
+                            our upcoming
+                            exhibitions, artist talks, and creative labs at MOCA India.</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] text-primary group/btn transition-all shrink-0 reveal-btn">
+                        <span>View All Events</span>
+                        <div
+                            class="w-12 h-px bg-gold transform group-hover/btn:translate-x-3 transition-transform duration-500">
+                        </div>
+                    </button>
+                </div>
+                <div class="relative group/swiper">
+                    <div class="swiper events-swiper">
+                        <div class="swiper-wrapper h-auto!">
+                            <!-- Event Card 1 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="group cursor-pointer">
+                                    <div
+                                        class="rounded-4xl overflow-hidden aspect-4/3 mb-8 relative bg-accent shadow-xl">
+                                        <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                            src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80&w=2000"
+                                            alt="Exhibition Opening">
+                                        <div class="absolute top-6 left-6">
+                                            <span
+                                                class="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-primary shadow-sm">Vernissage</span>
+                                        </div>
+                                    </div>
+                                    <div class="px-4">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="text-[11px] font-bold text-gold uppercase tracking-[0.2em]">Oct
+                                                15,
+                                                2024</span>
+                                            <div class="w-12 h-px text-gold/30"></div>
+                                        </div>
+                                        <h3
+                                            class="font-serif text-3xl mb-4 text-primary group-hover:text-gold transition-colors duration-500 leading-tight">
+                                            "Ethereal Forms" Opening Night</h3>
+                                        <p class="text-secondary text-sm leading-relaxed mb-8 line-clamp-3">A journey
+                                            into the
+                                            ephemeral nature of sculpture and light. Join us for the grand unveiling of
+                                            our Fall
+                                            2024 collection.</p>
+                                        <div
+                                            class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-primary group-hover:gap-5 transition-all">
+                                            <span>Read More</span>
+                                            <i class="fas fa-arrow-right text-[8px] text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 2 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="group cursor-pointer">
+                                    <div
+                                        class="rounded-4xl overflow-hidden aspect-4/3 mb-8 relative bg-accent shadow-xl">
+                                        <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                            src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=2000"
+                                            alt="Artist Talk">
+                                        <div class="absolute top-6 left-6">
+                                            <span
+                                                class="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-primary shadow-sm">Dialogues</span>
+                                        </div>
+                                    </div>
+                                    <div class="px-4">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="text-[11px] font-bold text-gold uppercase tracking-[0.2em]">Oct
+                                                28,
+                                                2024</span>
+                                            <div class="w-12 h-px text-gold/30"></div>
+                                        </div>
+                                        <h3
+                                            class="font-serif text-3xl mb-4 text-primary group-hover:text-gold transition-colors duration-500 leading-tight">
+                                            Digital Horizons: Artist Dialogue</h3>
+                                        <p class="text-secondary text-sm leading-relaxed mb-8 line-clamp-3">Exploring
+                                            the
+                                            intersection of traditional mediums and digital innovation with our resident
+                                            fellows.
+                                        </p>
+                                        <div
+                                            class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-primary group-hover:gap-5 transition-all">
+                                            <span>Read More</span>
+                                            <i class="fas fa-arrow-right text-[8px] text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 3 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="group cursor-pointer">
+                                    <div
+                                        class="rounded-4xl overflow-hidden aspect-4/3 mb-8 relative bg-accent shadow-xl">
+                                        <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=2000"
+                                            alt="Creative Lab">
+                                        <div class="absolute top-6 left-6">
+                                            <span
+                                                class="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-primary shadow-sm">Atelier</span>
+                                        </div>
+                                    </div>
+                                    <div class="px-4">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="text-[11px] font-bold text-gold uppercase tracking-[0.2em]">Nov
+                                                12,
+                                                2024</span>
+                                            <div class="w-12 h-px text-gold/30"></div>
+                                        </div>
+                                        <h3
+                                            class="font-serif text-3xl mb-4 text-primary group-hover:text-gold transition-colors duration-500 leading-tight">
+                                            Modern Minimalism: Workshop</h3>
+                                        <p class="text-secondary text-sm leading-relaxed mb-8 line-clamp-3">A hands-on
+                                            masterclass
+                                            focused on the principles of reduction and architectural form in
+                                            contemporary clay work.
+                                        </p>
+                                        <div
+                                            class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-primary group-hover:gap-5 transition-all">
+                                            <span>Read More</span>
+                                            <i class="fas fa-arrow-right text-[8px] text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Card 4 -->
+                            <div class="swiper-slide reveal-card">
+                                <div class="group cursor-pointer">
+                                    <div
+                                        class="rounded-4xl overflow-hidden aspect-4/3 mb-8 relative bg-accent shadow-xl">
+                                        <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                            src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=1974"
+                                            alt="Contemporary Lab">
+                                        <div class="absolute top-6 left-6">
+                                            <span
+                                                class="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-primary shadow-sm">Experimental</span>
+                                        </div>
+                                    </div>
+                                    <div class="px-4">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="text-[11px] font-bold text-gold uppercase tracking-[0.2em]">Dec
+                                                05,
+                                                2024</span>
+                                            <div class="w-12 h-px text-gold/30"></div>
+                                        </div>
+                                        <h3
+                                            class="font-serif text-3xl mb-4 text-primary group-hover:text-gold transition-colors duration-500 leading-tight">
+                                            Sculpting the Void: Masterclass</h3>
+                                        <p class="text-secondary text-sm leading-relaxed mb-8 line-clamp-3">Join our
+                                            resident fellow in exploring the spatial relationships between physical form
+                                            and negative space.
+                                        </p>
+                                        <div
+                                            class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-primary group-hover:gap-5 transition-all">
+                                            <span>Read More</span>
+                                            <i class="fas fa-arrow-right text-[8px] text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Navigation (Bottom Centered) -->
+                    <div class="flex items-center gap-6 mt-10 justify-center">
+                        <button
+                            class="events-prev w-14 h-14 rounded-full border border-black/10 flex items-center justify-center text-primary hover:text-gold hover:border-gold transition-all duration-300 disabled:opacity-30">
+                            <i class="fas fa-arrow-left text-sm"></i>
+                        </button>
+                        <button
+                            class="events-next w-14 h-14 rounded-full border border-black/10 flex items-center justify-center text-primary hover:text-gold hover:border-gold transition-all duration-300 disabled:opacity-30">
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter Section -->
+        <section id="newsletter" class="relative py-20 md:py-32 overflow-hidden bg-primary">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/img/subscribe.png"
+                    class="w-full h-full object-cover opacity-30 transform scale-105 active:scale-110 transition-transform duration-[10s]"
+                    alt="MOCA Studio">
+                <div class="absolute inset-0 bg-linear-to-b from-primary via-transparent to-primary opacity-10">
+                </div>
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+
+            <div class="max-w-[1440px] mx-auto px-4 md:px-12 relative z-10">
+                <div class="text-center max-w-2xl mx-auto">
+                    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-gold block mb-6 md:mb-8">Join
+                        the
+                        Movement</span>
+                    <h2 class="font-serif text-4xl md:text-6xl mb-6 md:mb-8 text-white leading-tight">Elevate Your <span
+                            class="italic text-gold">Perspective</span></h2>
+                    <p
+                        class="text-white/70 text-base md:text-lg mb-10 md:mb-14 max-w-lg mx-auto font-light leading-relaxed px-4 md:px-0">
+                        Subscribe for private views, artist residency insights, and exclusive invitations from the heart
+                        of MOCA India.
+                    </p>
+
+                    <form class="relative max-w-md mx-auto group px-4 md:px-0">
+                        <div
+                            class="absolute -inset-1 bg-linear-to-r from-gold/50 to-white/20 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
+                        </div>
+                        <div class="relative flex flex-col sm:flex-row gap-3 sm:gap-0">
+                            <input type="email" placeholder="email@example.com"
+                                class="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 md:px-8 py-4 md:py-5 text-sm text-white focus:ring-1 focus:ring-gold outline-none transition-all placeholder:text-white/30 shadow-2xl">
+                            <button type="submit"
+                                class="w-full sm:w-auto sm:absolute sm:right-2 sm:top-2 sm:bottom-2 bg-gold sm:bg-transparent text-white sm:text-gold px-8 md:px-10 py-4 sm:py-3 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white sm:hover:bg-white transition-all flex items-center justify-center gap-2 shadow-lg">
+                                Join <i class="fas fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div
+                        class="flex flex-wrap justify-center gap-6 md:gap-10 mt-12 md:mt-16 text-[9px] md:text-[10px] text-white/50 font-bold uppercase tracking-[0.3em] px-4 md:px-0">
+                        <span class="flex items-center gap-3"><i class="far fa-envelope text-gold"></i> Weekly
+                            Digest</span>
+                        <span class="flex items-center gap-3"><i class="far fa-star text-gold"></i> Private
+                            Views</span>
+                        <span class="flex items-center gap-3"><i class="fas fa-lock text-gold"></i> Exclusive
+                            Access</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-surface pt-20 md:pt-32 pb-16">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-24">
+                <div class="sm:col-span-2 md:col-span-5">
+                    <a class="group flex items-center gap-3 text-primary mb-8 md:mb-10" href="#/">
+                        <img src="assets/img/logo-dark.png" alt="" srcset="" class="max-w-[200px] w-full">
+                    </a>
+                    <p class="text-secondary text-base leading-relaxed max-w-sm mb-10 opacity-80">
+                        The Museum of Contemporary Art India is a premier institution dedicated to the intersection of
+                        traditional heritage and future-forward artistic expression.
+                    </p>
+                    <div class="flex items-center gap-5">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
+                    <ul class="space-y-4">
+                        <li><a href="gallery.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Current
+                                Exhibitions</a></li>
+                        <li><a href="residency.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
+                                Residency</a></li>
+                        <li><a href="workshop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
+                                Labs</a></li>
+                        <li><a href="shop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
+                                Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Information</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">About
+                                MOCA</a></li>
+                        <li><a href="press.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Press &
+                                Media</a></li>
+                        <li><a href="#" class="text-sm text-secondary hover:text-primary transition-colors">Support
+                                Us</a></li>
+                        <li><a href="contact.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-2 md:col-span-3">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Visit</h4>
+                    <address class="not-italic text-sm text-secondary space-y-6 leading-relaxed ">
+                        <p>H-102, Art District,<br>Knowledge Corridor, Gandhinagar,<br>Gujarat 382007</p>
+                        <p>Tuesday – Sunday: 11am – 8pm<br>Monday: Closed</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p class="text-[10px] font-bold text-secondary uppercase tracking-widest text-center md:text-left">©
+                    2024 MOCA ART INDIA. ALL
+                    RIGHTS RESERVED.</p>
+                <div class="flex items-center gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Terms
+                        of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

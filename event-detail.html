@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Detail | MOCA Art India</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- GSAP & SplitType -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="font-sans antialiased text-primary selection:bg-primary selection:text-white bg-surface">
+    <!-- Institutional Preloader -->
+
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+        <div id="header-container"
+            class="max-w-[1440px] mx-auto px-4 md:px-12 h-24 flex items-center justify-between transition-all duration-300">
+            <a class="group flex items-center gap-3 text-white transition-colors duration-500 header-text"
+                href="index.html" data-discover="true">
+                <img src="assets/img/logo-dark.png" alt="Moca Logo" class="h-9 w-auto logo-dark">
+                <img src="assets/img/logo.png" alt="Moca Logo" class="h-9 w-auto logo-light">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="about.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">About</a>
+                <a href="gallery.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Gallery</a>
+                <a href="residency.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Residency</a>
+                <a href="workshop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Workshops</a>
+                <a href="events.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Events</a>
+                <a href="shop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Shop</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden lg:flex items-center gap-2 text-sm font-medium text-white hover:text-gold transition-all header-text">
+                    <span>Book Appointment</span>
+                </button>
+                <button
+                    class="bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gold transition-all flex items-center gap-2 text-white shadow-lg">
+                    <span>Get Tickets</span>
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                </button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white hover:text-gold transition-colors p-2 z-50 header-text">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-primary h-screen z-60 translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex items-center justify-between mb-16">
+                    <div class="flex items-center gap-3 text-white">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="48" height="48"></rect>
+                            <circle cx="76" cy="24" r="24"></circle>
+                            <path d="M24 52 A 24 24 0 0 0 24 100 V 52 Z"></path>
+                            <path d="M52 100 L76 52 L100 100 Z"></path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-extrabold tracking-tighter leading-none uppercase">Moca</span>
+                            <span
+                                class="text-[8px] font-bold tracking-[0.2em] uppercase leading-none mt-0.5 opacity-70">Gandhinagar</span>
+                        </div>
+                    </div>
+                    <button id="close-menu-btn" class="text-white hover:text-gold transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-8">
+                    <a href="about.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Gallery</a>
+                    <a href="residency.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Residency</a>
+                    <a href="workshop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Workshops</a>
+                    <a href="events.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
+                </nav>
+                <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+                    <button
+                        class="bg-gold hover:bg-surface hover:text-gold transition-all duration-500 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest text-center shadow-gold/20 shadow-xl">
+                        Book Appointment
+                    </button>
+                    <div class="flex justify-center gap-6">
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-vimeo-v text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Hero Detail -->
+        <section class="relative py-24 md:py-40 overflow-hidden bg-primary text-white">
+            <div class="absolute inset-0 opacity-40">
+                <img class="w-full h-full object-cover animate-ken-burns" src="assets/img/event-opening.png"
+                    alt="MOCA Workshops">
+            </div>
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full"></div>
+            <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
+                <span class="reveal-subtitle text-gold! mb-6 block">Current Series • Gala</span>
+                <h1 class="reveal-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Gala of
+                    <span class="italic font-light">The Voids</span>
+                </h1>
+                <div class="flex flex-wrap gap-8 reveal-text justify-center">
+                    <div class="flex items-center gap-3">
+                        <i class="far fa-calendar-alt text-gold text-lg"></i>
+                        <span class="text-sm font-medium uppercase tracking-widest text-white/60">Mar 01 – Apr
+                            30, 2024</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="far fa-clock text-gold text-lg"></i>
+                        <span class="text-sm font-medium uppercase tracking-widest text-white/60">11:00 AM –
+                            8:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-map-marker-alt text-gold text-lg"></i>
+                        <span class="text-sm font-medium uppercase tracking-widest text-white/60">Main
+                            Exhibition Hall A</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="py-24 md:py-32 bg-white">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+
+                    <!-- Invitation & Write-up -->
+                    <div class="lg:col-span-12 mb-10 reveal-card">
+                        <div class="rounded-4xl overflow-hidden aspect-video shadow-22xl relative mb-20 bg-surface">
+                            <img class="w-full h-full object-contain p-10 lg:p-20 transition-transform duration-1000 hover:scale-[1.02]"
+                                src="assets/img/event-invitation.png" alt="Official Invitation Card">
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-8">
+                        <h2 class="reveal-title font-serif text-4xl md:text-5xl text-primary mb-10 leading-tight">An
+                            Odyssey into <span class="italic text-gold opacity-90">Negative Space</span></h2>
+                        <div class="reveal-text space-y-8 text-secondary text-lg leading-relaxed font-light">
+                            <p>The "Gala of the Voids" represents MOCA Art India's most ambitious exploration of
+                                architectural and mental negative space to date. For two months, the main exhibition
+                                halls are transformed into sensory-deprived chambers intended to provoke introspective
+                                dialogue between the viewer and the surrounding emptiness.</p>
+                            <p>Featuring a curated selection of 12 international masters, the event challenges the
+                                conventional "museum block" by treating air, sound, and gravity as primary mediums. The
+                                opening gala night sets the tone with a multi-sensory performance that blends
+                                traditional subcontinental drone music with contemporary digital mapping.</p>
+                            <blockquote
+                                class="border-l-4 border-gold pl-8 py-4 italic text-primary/80 font-serif text-2xl my-12">
+                                "Space is not a vacuum; it is the most active participant in the artistic conversation."
+                                — Ar. Sameer Vohra, Curator.
+                            </blockquote>
+                            <p>Attendees will witness the unveiling of "The Silent Monolith," a 15-ton gravity-defying
+                                installation that serves as the center-piece of the Cohort 04 residency outcome. Private
+                                tours are available for institutional members every Wednesday evening.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Stats/Location -->
+                    <div class="lg:col-span-4">
+                        <div class="sticky top-32 space-y-12">
+                            <div class="reveal-card bg-surface p-10 rounded-4xl border border-black/5">
+                                <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-8 italic">Event
+                                    Highlights</h4>
+                                <ul class="space-y-6">
+                                    <li class="flex items-center gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gold shadow-sm">
+                                            <i class="fas fa-users text-[10px]"></i>
+                                        </div>
+                                        <span
+                                            class="text-sm text-secondary font-medium uppercase tracking-widest">Global
+                                            Pannelists</span>
+                                    </li>
+                                    <li class="flex items-center gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gold shadow-sm">
+                                            <i class="fas fa-music text-[10px]"></i>
+                                        </div>
+                                        <span class="text-sm text-secondary font-medium uppercase tracking-widest">Sonic
+                                            Landscapes</span>
+                                    </li>
+                                    <li class="flex items-center gap-4">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-gold shadow-sm">
+                                            <i class="fas fa-lightbulb text-[10px]"></i>
+                                        </div>
+                                        <span class="text-sm text-secondary font-medium uppercase tracking-widest">Light
+                                            Mapping</span>
+                                    </li>
+                                </ul>
+                                <div class="mt-10 pt-10 border-t border-black/5">
+                                    <p class="text-xs text-secondary/60 leading-relaxed mb-6 italic">Secure your spot
+                                        early as institutional events operate at a strict 200-person capacity for
+                                        intimacy.</p>
+                                    <button
+                                        class="w-full bg-primary text-white py-4 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-gold transition-all">Request
+                                        Invitation</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photos Gallery -->
+                <div class="mt-32">
+                    <div class="flex items-center gap-6 mb-16 reveal-subtitle">
+                        <span class="text-xs font-black uppercase tracking-[0.5em] text-gold">Event Photo Gallery</span>
+                        <div class="flex-1 h-px bg-black/5"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="reveal-card rounded-3xl overflow-hidden aspect-square shadow-lg group">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                src="assets/img/gallery-modern.png" alt="Gallery Photo 1">
+                        </div>
+                        <div class="reveal-card rounded-3xl overflow-hidden aspect-square shadow-lg group">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                src="assets/img/gallery-tradition.png" alt="Gallery Photo 2">
+                        </div>
+                        <div class="reveal-card rounded-3xl overflow-hidden aspect-square shadow-lg group">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                src="assets/img/gallery-digital.png" alt="Gallery Photo 3">
+                        </div>
+                        <div class="reveal-card rounded-3xl overflow-hidden aspect-square shadow-lg group">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                src="assets/img/event-opening.png" alt="Gallery Photo 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-surface pt-20 md:pt-32 pb-16">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-24">
+                <div class="sm:col-span-2 md:col-span-5">
+                    <a class="group flex items-center gap-3 text-primary mb-8 md:mb-10" href="#/">
+                        <img src="assets/img/logo-dark.png" alt="" srcset="" class="max-w-[200px] w-full">
+                    </a>
+                    <p class="text-secondary text-base leading-relaxed max-w-sm mb-10 opacity-80">
+                        The Museum of Contemporary Art India is a premier institution dedicated to the intersection of
+                        traditional heritage and future-forward artistic expression.
+                    </p>
+                    <div class="flex items-center gap-5">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
+                    <ul class="space-y-4">
+                        <li><a href="gallery.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Current
+                                Exhibitions</a></li>
+                        <li><a href="residency.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
+                                Residency</a></li>
+                        <li><a href="workshop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
+                                Labs</a></li>
+                        <li><a href="shop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
+                                Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Information</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">About
+                                MOCA</a></li>
+                        <li><a href="press.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Press &
+                                Media</a></li>
+                        <li><a href="#" class="text-sm text-secondary hover:text-primary transition-colors">Support
+                                Us</a></li>
+                        <li><a href="contact.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-2 md:col-span-3">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Visit</h4>
+                    <address class="not-italic text-sm text-secondary space-y-6 leading-relaxed ">
+                        <p>H-102, Art District,<br>Knowledge Corridor, Gandhinagar,<br>Gujarat 382007</p>
+                        <p>Tuesday – Sunday: 11am – 8pm<br>Monday: Closed</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p class="text-[10px] font-bold text-secondary uppercase tracking-widest text-center md:text-left">©
+                    2024 MOCA ART INDIA. ALL
+                    RIGHTS RESERVED.</p>
+                <div class="flex items-center gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Terms
+                        of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

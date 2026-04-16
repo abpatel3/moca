@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Residency | MOCA Art India</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- GSAP & SplitType -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="font-sans antialiased text-primary selection:bg-primary selection:text-white bg-surface">
+    <!-- Institutional Preloader -->
+
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+        <div id="header-container"
+            class="max-w-[1440px] mx-auto px-4 md:px-12 h-24 flex items-center justify-between transition-all duration-300">
+            <a class="group flex items-center gap-3 text-white transition-colors duration-500 header-text"
+                href="index.html" data-discover="true">
+                <img src="assets/img/logo-dark.png" alt="Moca Logo" class="h-9 w-auto logo-dark">
+                <img src="assets/img/logo.png" alt="Moca Logo" class="h-9 w-auto logo-light">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="about.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">About</a>
+                <a href="gallery.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Gallery</a>
+                <a href="residency.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Residency</a>
+                <a href="workshop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Workshops</a>
+                <a href="events.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Events</a>
+                <a href="shop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Shop</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden lg:flex items-center gap-2 text-sm font-medium text-white hover:text-gold transition-all header-text">
+                    <span>Book Appointment</span>
+                </button>
+                <button
+                    class="bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gold transition-all flex items-center gap-2 text-white shadow-lg">
+                    <span>Get Tickets</span>
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                </button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white hover:text-gold transition-colors p-2 z-50 header-text">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-primary h-screen z-60 translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex items-center justify-between mb-16">
+                    <div class="flex items-center gap-3 text-white">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="48" height="48"></rect>
+                            <circle cx="76" cy="24" r="24"></circle>
+                            <path d="M24 52 A 24 24 0 0 0 24 100 V 52 Z"></path>
+                            <path d="M52 100 L76 52 L100 100 Z"></path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-extrabold tracking-tighter leading-none uppercase">Moca</span>
+                            <span
+                                class="text-[8px] font-bold tracking-[0.2em] uppercase leading-none mt-0.5 opacity-70">Gandhinagar</span>
+                        </div>
+                    </div>
+                    <button id="close-menu-btn" class="text-white hover:text-gold transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-8">
+                    <a href="about.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Gallery</a>
+                    <a href="residency.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Residency</a>
+                    <a href="workshop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Workshops</a>
+                    <a href="events.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
+                </nav>
+                <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+                    <button
+                        class="bg-gold hover:bg-surface hover:text-gold transition-all duration-500 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest text-center shadow-gold/20 shadow-xl">
+                        Book Appointment
+                    </button>
+                    <div class="flex justify-center gap-6">
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-vimeo-v text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="relative py-24 md:py-40 overflow-hidden bg-primary text-white">
+            <div class="absolute inset-0 opacity-40">
+                <img class="w-full h-full object-cover animate-ken-burns" src="assets/img/residency-hero.png"
+                    alt="Artist Residency Studio">
+            </div>
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full"></div>
+            <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
+                <span class="reveal-subtitle text-gold! mb-6 block">Artist-in-Residence</span>
+                <h1 class="reveal-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Catalyzing
+                    <br><span class="italic font-light">New Realities</span>
+                </h1>
+                <p class="reveal-text text-lg md:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed font-light">
+                    An intensive three-month immersion for visionaries, providing the space, resources, and intellectual
+                    freedom to redefine contemporary art from the Global South.
+                </p>
+            </div>
+        </section>
+
+        <!-- Description Section -->
+        <section class="py-24 md:py-32 bg-white">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div class="max-w-xl">
+                        <span class="reveal-subtitle mb-6 block">The Sanctuary</span>
+                        <h2 class="reveal-title font-serif text-4xl md:text-6xl text-primary mb-10 leading-tight">A
+                            Space for <br><span class="italic text-gold opacity-90">Deep Focus</span></h2>
+                        <div class="w-16 h-[2px] bg-gold mb-12 rounded-full reveal-line"></div>
+                        <p class="reveal-text text-secondary text-lg mb-8 leading-relaxed">
+                            MOCA's residency program offers four state-of-the-art studio apartments specifically
+                            designed for large-scale creation and intellectual inquiry. Each sanctuary provides natural
+                            overhead lighting, museum-grade archival tools, and individual meditation gardens.
+                        </p>
+                        <p class="reveal-text text-secondary text-lg mb-10 leading-relaxed">
+                            Whether you are working with traditional pigment or generative algorithms, the residency
+                            provides a vacuum from the noise of the world, allowing for a singular focus on the artistic
+                            soul.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 reveal-card">
+                            <div class="border-l border-gold pl-6">
+                                <span class="text-3xl font-serif text-primary block mb-1">24/7</span>
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Studio
+                                    Access</span>
+                            </div>
+                            <div class="border-l border-gold pl-6">
+                                <span class="text-3xl font-serif text-primary block mb-1">Full</span>
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Archival
+                                    Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal-card">
+                        <div class="rounded-4xl overflow-hidden aspect-4/5 shadow-22xl relative">
+                            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                                src="assets/img/residency-hero.png" alt="Studio detail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="py-24 md:py-32 bg-surface">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+                    <div class="lg:col-span-7 reveal-card order-2 lg:order-1">
+                        <div class="rounded-4xl overflow-hidden aspect-video shadow-2xl relative">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                src="assets/img/residency-community.png" alt="Communal Discussion Space">
+                            <div class="absolute inset-0 bg-primary/10"></div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 order-1 lg:order-2">
+                        <span class="reveal-subtitle mb-6 block">Intellectual Exchange</span>
+                        <h2 class="reveal-title font-serif text-4xl md:text-5xl text-primary mb-8 leading-tight">
+                            Collective <span class="italic text-gold opacity-90">Wisdom</span></h2>
+                        <p class="reveal-text text-secondary text-base leading-relaxed mb-10 opacity-80">
+                            Beyond the private studio, MOCA fosters a high-impact intellectual community. Weekly "Nexus
+                            Diologues" bring together resident artists with global curators, philosophers, and
+                            architectural historians.
+                        </p>
+                        <ul class="space-y-6 reveal-text">
+                            <li class="flex items-start gap-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2"></div>
+                                <p class="text-secondary text-sm">Monthly critique sessions with visiting museum
+                                    directors.</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2"></div>
+                                <p class="text-secondary text-sm">Shared resource library of rare subcontinental art
+                                    volumes.</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2"></div>
+                                <p class="text-secondary text-sm">Cross-disciplinary research grants for collaborative
+                                    projects.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Calls Section (Newsletter Style) -->
+        <section id="open-calls" class="relative py-24 md:py-40 overflow-hidden bg-primary">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/img/subscribe.png"
+                    class="w-full h-full object-cover opacity-30 transform scale-105 active:scale-110 transition-transform duration-[10s]"
+                    alt="MOCA Studio">
+                <div class="absolute inset-0 bg-linear-to-b from-primary via-transparent to-primary opacity-10">
+                </div>
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+
+            <div class="max-w-[1440px] mx-auto px-4 md:px-12 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="reveal-subtitle text-gold! block mb-8">Join the Residency</span>
+                    <h2 class="font-serif text-4xl md:text-6xl mb-6 md:mb-8 text-white leading-tight">Define Your
+                        <span class="italic text-gold">Artistic Journey</span>
+                    </h2>
+                    <p
+                        class="reveal-text text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                        We are currently accepting applications for the Fall 2024 Residency Program. Looking for artists
+                        whose work challenges the intersections of heritage and digital future.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center reveal-btn">
+                        <button
+                            class="bg-gold text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl">
+                            Apply Online
+                        </button>
+                        <button
+                            class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all">
+                            Download Prospectus
+                        </button>
+                    </div>
+
+                    <div
+                        class="flex flex-wrap justify-center gap-10 mt-16 text-[10px] text-white/40 font-bold uppercase tracking-[0.3em]">
+                        <span class="flex items-center gap-3"><i class="far fa-calendar-alt text-gold"></i> 3
+                            Months</span>
+                        <span class="flex items-center gap-3"><i class="fas fa-tools text-gold"></i> Full Studio</span>
+                        <span class="flex items-center gap-3"><i class="fas fa-globe text-gold"></i> Global
+                            Network</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-surface pt-20 md:pt-32 pb-16">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-24">
+                <div class="sm:col-span-2 md:col-span-5">
+                    <a class="group flex items-center gap-3 text-primary mb-8 md:mb-10" href="#/">
+                        <img src="assets/img/logo-dark.png" alt="" srcset="" class="max-w-[200px] w-full">
+                    </a>
+                    <p class="text-secondary text-base leading-relaxed max-w-sm mb-10 opacity-80">
+                        The Museum of Contemporary Art India is a premier institution dedicated to the intersection of
+                        traditional heritage and future-forward artistic expression.
+                    </p>
+                    <div class="flex items-center gap-5">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
+                    <ul class="space-y-4">
+                        <li><a href="gallery.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Current
+                                Exhibitions</a></li>
+                        <li><a href="residency.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
+                                Residency</a></li>
+                        <li><a href="workshop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
+                                Labs</a></li>
+                        <li><a href="shop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
+                                Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Information</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">About
+                                MOCA</a></li>
+                        <li><a href="press.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Press &
+                                Media</a></li>
+                        <li><a href="#" class="text-sm text-secondary hover:text-primary transition-colors">Support
+                                Us</a></li>
+                        <li><a href="contact.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-2 md:col-span-3">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Visit</h4>
+                    <address class="not-italic text-sm text-secondary space-y-6 leading-relaxed ">
+                        <p>H-102, Art District,<br>Knowledge Corridor, Gandhinagar,<br>Gujarat 382007</p>
+                        <p>Tuesday – Sunday: 11am – 8pm<br>Monday: Closed</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p class="text-[10px] font-bold text-secondary uppercase tracking-widest text-center md:text-left">©
+                    2024 MOCA ART INDIA. ALL
+                    RIGHTS RESERVED.</p>
+                <div class="flex items-center gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Terms
+                        of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

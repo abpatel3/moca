@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press & Media | MOCA Art India</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- GSAP & SplitType -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="font-sans antialiased text-primary selection:bg-primary selection:text-white bg-surface">
+    <!-- Institutional Preloader -->
+
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent">
+        <div id="header-container"
+            class="max-w-[1440px] mx-auto px-4 md:px-12 h-24 flex items-center justify-between transition-all duration-300">
+            <a class="group flex items-center gap-3 text-white transition-colors duration-500 header-text"
+                href="index.html" data-discover="true">
+                <img src="assets/img/logo-dark.png" alt="Moca Logo" class="h-9 w-auto logo-dark">
+                <img src="assets/img/logo.png" alt="Moca Logo" class="h-9 w-auto logo-light">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="about.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">About</a>
+                <a href="gallery.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Gallery</a>
+                <a href="residency.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Residency</a>
+                <a href="workshop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Workshops</a>
+                <a href="events.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Events</a>
+                <a href="shop.html"
+                    class="text-sm font-medium text-white/80 hover:text-gold transition-colors header-text">Shop</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden lg:flex items-center gap-2 text-sm font-medium text-white hover:text-gold transition-all header-text">
+                    <span>Book Appointment</span>
+                </button>
+                <button
+                    class="bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gold transition-all flex items-center gap-2 text-white shadow-lg">
+                    <span>Get Tickets</span>
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                </button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-white hover:text-gold transition-colors p-2 z-50 header-text">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-primary h-screen z-60 translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+            <div class="flex flex-col h-full p-8">
+                <div class="flex items-center justify-between mb-16">
+                    <div class="flex items-center gap-3 text-white">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="48" height="48"></rect>
+                            <circle cx="76" cy="24" r="24"></circle>
+                            <path d="M24 52 A 24 24 0 0 0 24 100 V 52 Z"></path>
+                            <path d="M52 100 L76 52 L100 100 Z"></path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-extrabold tracking-tighter leading-none uppercase">Moca</span>
+                            <span
+                                class="text-[8px] font-bold tracking-[0.2em] uppercase leading-none mt-0.5 opacity-70">Gandhinagar</span>
+                        </div>
+                    </div>
+                    <button id="close-menu-btn" class="text-white hover:text-gold transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-8">
+                    <a href="about.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">About</a>
+                    <a href="gallery.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Gallery</a>
+                    <a href="residency.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Residency</a>
+                    <a href="workshop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Workshops</a>
+                    <a href="events.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
+                </nav>
+                <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+                    <button
+                        class="bg-gold hover:bg-surface hover:text-gold transition-all duration-500 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest text-center shadow-gold/20 shadow-xl">
+                        Book Appointment
+                    </button>
+                    <div class="flex justify-center gap-6">
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                                class="fab fa-vimeo-v text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="relative py-24 md:py-40 overflow-hidden bg-primary text-white">
+            <div class="absolute inset-0 opacity-40">
+                <img class="w-full h-full object-cover animate-ken-burns" src="assets/img/press-media-hero.png"
+                    alt="MOCA Press Room">
+            </div>
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full"></div>
+            <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
+                <span class="reveal-subtitle text-gold! mb-6 block">Institutional Voice</span>
+                <h1 class="reveal-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Press &
+                    <span class="italic font-light">Media</span>
+                </h1>
+                <p class="reveal-text text-lg md:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed font-light">
+                    The latest official news, curated media coverage, and high-resolution assets for global cultural
+                    journalists.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search & Filter -->
+        <section class="py-12 border-b border-black/5 bg-white">
+            <div
+                class="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="flex flex-wrap items-center gap-4 md:gap-8">
+                    <button data-tab="all"
+                        class="tab-btn text-[10px] font-black uppercase tracking-[0.3em] pb-1 transition-all cursor-pointer">All
+                        Coverage</button>
+                    <button data-tab="press-release"
+                        class="tab-btn text-[10px] font-black uppercase tracking-[0.3em] pb-1 transition-all cursor-pointer">Press
+                        Releases</button>
+                    <button data-tab="news"
+                        class="tab-btn text-[10px] font-black uppercase tracking-[0.3em] pb-1 transition-all cursor-pointer">In
+                        The News</button>
+                </div>
+                <div class="relative w-full md:w-64">
+                    <input type="text" placeholder="Search Archives..."
+                        class="w-full bg-surface border-none rounded-full px-6 py-3 text-xs focus:ring-1 focus:ring-gold outline-none">
+                    <i
+                        class="fas fa-search absolute right-6 top-1/2 -translate-y-1/2 text-secondary/40 text-[10px]"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Press Grid -->
+        <section class="py-24 md:py-32 bg-white">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-20">
+
+                    <!-- Press Item 1 -->
+                    <article class="reveal-card press-item group" data-category="press-release">
+                        <div class="mb-8 overflow-hidden rounded-2xl aspect-video bg-surface shadow-md relative">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1 rounded text-[8px] font-bold uppercase tracking-widest text-primary">
+                                Press Release</div>
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/about-heritage.png" alt="MOCA Expansion">
+                        </div>
+                        <div class="px-2">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">March 24,
+                                    2024</span>
+                                <div class="w-1 h-1 rounded-full bg-black/10"></div>
+                                <span
+                                    class="text-[10px] font-bold text-secondary/60 uppercase tracking-widest italic">MOCA
+                                    HQ</span>
+                            </div>
+                            <h3
+                                class="font-serif text-2xl text-primary mb-6 group-hover:text-gold transition-colors leading-snug">
+                                MOCA Art India Announces New Wing for Generative Arts</h3>
+                            <p class="text-secondary text-sm leading-relaxed opacity-70 mb-8 line-clamp-3">A dedicated
+                                12,000 sq. ft. space focused exclusively on the intersection of blockchain ethics and
+                                traditional sculpture slated for Q4 2024.</p>
+                            <div class="flex items-center gap-6">
+                                <a href="#"
+                                    class="text-[10px] font-black uppercase tracking-widest text-primary hover:text-gold transition-colors flex items-center gap-2">Read
+                                    Full <i class="fas fa-arrow-right text-[8px]"></i></a>
+                                <a href="#"
+                                    class="text-[10px] font-black uppercase tracking-widest text-secondary hover:text-gold transition-colors flex items-center gap-2">PDF
+                                    <i class="fas fa-download text-[8px]"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Press Item 2 -->
+                    <article class="reveal-card press-item group" data-category="news">
+                        <div class="mb-8 overflow-hidden rounded-2xl aspect-video bg-surface shadow-md relative">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1 rounded text-[8px] font-bold uppercase tracking-widest text-primary">
+                                In The News</div>
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/gallery-modern.png" alt="The Art Archive Review">
+                        </div>
+                        <div class="px-2">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Feb 12,
+                                    2024</span>
+                                <div class="w-1 h-1 rounded-full bg-black/10"></div>
+                                <span
+                                    class="text-[10px] font-bold text-secondary/60 uppercase tracking-widest italic">The
+                                    Art Archive</span>
+                            </div>
+                            <h3
+                                class="font-serif text-2xl text-primary mb-6 group-hover:text-gold transition-colors leading-snug">
+                                Review: How MOCA is Redefining the Modern Indian Aesthetic</h3>
+                            <p class="text-secondary text-sm leading-relaxed opacity-70 mb-8 line-clamp-3">"MOCA
+                                Gandhinagar succeeds where many fail – by creating a bridge between the deep past and
+                                the digital future without losing its institutional soul."</p>
+                            <a href="#"
+                                class="text-[10px] font-black uppercase tracking-widest text-primary hover:text-gold transition-colors flex items-center gap-2">Read
+                                Feature <i class="fas fa-external-link-alt text-[8px]"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Press Item 3 -->
+                    <article class="reveal-card press-item group" data-category="press-release">
+                        <div class="mb-8 overflow-hidden rounded-2xl aspect-video bg-surface shadow-md relative">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1 rounded text-[8px] font-bold uppercase tracking-widest text-primary">
+                                Press Release</div>
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/residency-hero.png" alt="Residency Award">
+                        </div>
+                        <div class="px-2">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Jan 30,
+                                    2024</span>
+                                <div class="w-1 h-1 rounded-full bg-black/10"></div>
+                                <span
+                                    class="text-[10px] font-bold text-secondary/60 uppercase tracking-widest italic">MOCA
+                                    HQ</span>
+                            </div>
+                            <h3
+                                class="font-serif text-2xl text-primary mb-6 group-hover:text-gold transition-colors leading-snug">
+                                Inaugural MOCA Fellows Announced for Cohort 04</h3>
+                            <p class="text-secondary text-sm leading-relaxed opacity-70 mb-8 line-clamp-3">Meet the six
+                                artists selected from over 4,000 applications to redefine subcontinental residency
+                                outcomes this spring.</p>
+                            <div class="flex items-center gap-6">
+                                <a href="#"
+                                    class="text-[10px] font-black uppercase tracking-widest text-primary hover:text-gold transition-colors flex items-center gap-2">Read
+                                    Full <i class="fas fa-arrow-right text-[8px]"></i></a>
+                                <a href="#"
+                                    class="text-[10px] font-black uppercase tracking-widest text-secondary hover:text-gold transition-colors flex items-center gap-2">PDF
+                                    <i class="fas fa-download text-[8px]"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Press Item 4 -->
+                    <article class="reveal-card press-item group" data-category="news">
+                        <div class="mb-8 overflow-hidden rounded-2xl aspect-video bg-surface shadow-md relative">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md px-3 py-1 rounded text-[8px] font-bold uppercase tracking-widest text-primary">
+                                In The News</div>
+                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                src="assets/img/event-opening.png" alt="Cultural Mirror">
+                        </div>
+                        <div class="px-2">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Dec 15,
+                                    2023</span>
+                                <div class="w-1 h-1 rounded-full bg-black/10"></div>
+                                <span
+                                    class="text-[10px] font-bold text-secondary/60 uppercase tracking-widest italic">Cultural
+                                    Mirror</span>
+                            </div>
+                            <h3
+                                class="font-serif text-2xl text-primary mb-6 group-hover:text-gold transition-colors leading-snug">
+                                The Intersection of Tradition and Modernity: MOCA's Mission</h3>
+                            <p class="text-secondary text-sm leading-relaxed opacity-70 mb-8 line-clamp-3">An interview
+                                with our director on the museum's role in Gandhinagar's burgeoning cultural district.
+                            </p>
+                            <a href="#"
+                                class="text-[10px] font-black uppercase tracking-widest text-primary hover:text-gold transition-colors flex items-center gap-2">View
+                                Article <i class="fas fa-external-link-alt text-[8px]"></i></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Media Inquiry -->
+        <section class="py-24 bg-primary text-white text-center relative overflow-hidden">
+            <div
+                class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_50%,rgba(197,160,101,0.1),transparent)] opacity-50">
+            </div>
+            <div class="max-w-[1440px] mx-auto px-6 relative z-10">
+                <span class="reveal-subtitle text-gold! block mb-8">Direct Access</span>
+                <h2 class="font-serif text-3xl md:text-5xl mb-10">For Urgent <span class="italic text-gold">Media
+                        Inquiries</span></h2>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-center gap-12 text-sm font-medium uppercase tracking-widest">
+                    <a href="mailto:press@mocaartindia.com"
+                        class="hover:text-gold transition-colors flex items-center gap-3">
+                        <i class="fas fa-envelope text-gold"></i> press@mocaartindia.com
+                    </a>
+                    <a href="tel:+917900000000" class="hover:text-gold transition-colors flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-gold"></i> +91 79 0000 0000
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-surface pt-20 md:pt-32 pb-16">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-24">
+                <div class="sm:col-span-2 md:col-span-5">
+                    <a class="group flex items-center gap-3 text-primary mb-8 md:mb-10" href="#/">
+                        <img src="assets/img/logo-dark.png" alt="" srcset="" class="max-w-[200px] w-full">
+                    </a>
+                    <p class="text-secondary text-base leading-relaxed max-w-sm mb-10 opacity-80">
+                        The Museum of Contemporary Art India is a premier institution dedicated to the intersection of
+                        traditional heritage and future-forward artistic expression.
+                    </p>
+                    <div class="flex items-center gap-5">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"><i
+                                class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
+                    <ul class="space-y-4">
+                        <li><a href="gallery.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Current
+                                Exhibitions</a></li>
+                        <li><a href="residency.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
+                                Residency</a></li>
+                        <li><a href="workshop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
+                                Labs</a></li>
+                        <li><a href="shop.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
+                                Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-1 md:col-span-2">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Information</h4>
+                    <ul class="space-y-4">
+                        <li><a href="about.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">About
+                                MOCA</a></li>
+                        <li><a href="press.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Press &
+                                Media</a></li>
+                        <li><a href="#" class="text-sm text-secondary hover:text-primary transition-colors">Support
+                                Us</a></li>
+                        <li><a href="contact.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sm:col-span-2 md:col-span-3">
+                    <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Visit</h4>
+                    <address class="not-italic text-sm text-secondary space-y-6 leading-relaxed ">
+                        <p>H-102, Art District,<br>Knowledge Corridor, Gandhinagar,<br>Gujarat 382007</p>
+                        <p>Tuesday – Sunday: 11am – 8pm<br>Monday: Closed</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-6">
+                <p class="text-[10px] font-bold text-secondary uppercase tracking-widest text-center md:text-left">©
+                    2024 MOCA ART INDIA. ALL
+                    RIGHTS RESERVED.</p>
+                <div class="flex items-center gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest hover:text-primary transition-colors">Terms
+                        of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>
