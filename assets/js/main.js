@@ -52,76 +52,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Header Scroll Effect ---
-    let isScrolled = false;
+    let lastScrollY = window.scrollY;
 
     const updateHeaderState = () => {
-        const { header, headerContainer, navLinks, hamburger } = elements;
+        const { header } = elements;
         if (!header) return;
 
-        const shouldScroll = window.scrollY > CONFIG.scrollThreshold;
+        const currentScrollY = window.scrollY;
+        const isScrollingDown = currentScrollY > lastScrollY && currentScrollY > 100;
+        const shouldBeSlim = currentScrollY > CONFIG.scrollThreshold;
 
-        // Only update DOM if state changed
-        if (shouldScroll === isScrolled) return;
-        isScrolled = shouldScroll;
-
-        if (isScrolled) {
-            header.classList.add('bg-background/95', 'backdrop-blur-md', 'border-border/50', 'shadow-md', 'scrolled');
-            header.classList.remove('bg-transparent', 'border-transparent', 'backdrop-blur-none');
-
-            headerContainer?.classList.add('h-16');
-            headerContainer?.classList.remove('h-24');
-
-            navLinks.forEach(link => {
-                // Remove light classes
-                link.classList.remove('text-white', 'text-white/80', 'text-gray-400', 'opacity-80');
-
-                if (link.tagName === 'A' || link.tagName === 'BUTTON') {
-                    link.classList.add('text-secondary');
-                }
-
-                if (link.tagName === 'SPAN' || link.classList.contains('text-xl')) {
-                    if (link.textContent.toLowerCase().includes('gandhinagar')) {
-                        link.classList.add('text-gold');
-                    } else {
-                        link.classList.add('text-primary');
-                    }
-                }
-
-                // Special case for nested spans
-                link.querySelectorAll('span').forEach(s => {
-                    s.classList.remove('text-white', 'text-white/80');
-                    s.style.color = ''; // Clear hardcoded styles
-                });
-            });
-
-            if (hamburger) {
-                hamburger.classList.add('text-primary');
-                hamburger.classList.remove('text-white');
-            }
+        // Sticky visual state (Shadow/Blur)
+        if (shouldBeSlim) {
+            header.classList.add('shadow-xl', 'bg-white/80', 'backdrop-blur-md', 'py-1');
+            header.classList.remove('bg-surface');
         } else {
-            header.classList.remove('bg-background/95', 'backdrop-blur-md', 'border-border/50', 'shadow-md', 'scrolled');
-            header.classList.add('bg-transparent', 'border-transparent', 'backdrop-blur-none');
-
-            headerContainer?.classList.add('h-24');
-            headerContainer?.classList.remove('h-16');
-
-            navLinks.forEach(link => {
-                link.classList.remove('text-secondary', 'text-primary', 'text-gold');
-
-                if (link.textContent.toLowerCase().includes('gandhinagar')) {
-                    link.classList.add('text-white');
-                } else if (link.tagName === 'A') {
-                    link.classList.add('text-white/80');
-                } else {
-                    link.classList.add('text-white');
-                }
-            });
-
-            if (hamburger) {
-                hamburger.classList.add('text-white');
-                hamburger.classList.remove('text-primary');
-            }
+            header.classList.remove('shadow-xl', 'bg-white/80', 'backdrop-blur-md', 'py-1');
+            header.classList.add('bg-surface');
         }
+
+        // Hide/Show logic
+        if (isScrollingDown) {
+            header.classList.add('-translate-y-full');
+        } else {
+            header.classList.remove('-translate-y-full');
+        }
+
+        lastScrollY = currentScrollY;
     };
 
     // Optimized scroll listener with requestAnimationFrame
@@ -144,8 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Shared config for content swipers
         const contentSwiperConfig = (next, prev, breakpoints) => ({
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 24,
             loop: true,
+            observer: true,
+            observeParents: true,
+            watchSlidesProgress: true,
             autoplay: { delay: 5000, disableOnInteraction: false },
             navigation: { nextEl: next, prevEl: prev },
             breakpoints
