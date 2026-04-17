@@ -71,8 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({
         limitCallbacks: true,
-        ignoreMobileResize: true
+        ignoreMobileResize: true,
+        autoRefreshEvents: "visibilitychange,DOMContentLoaded,load,resize" // More robust refresh
     });
+
+    // iOS Safari Fix: Normalize scroll behavior to prevent address bar jank
+    if (isMobile) {
+        ScrollTrigger.normalizeScroll(true);
+    }
 
     /**
      * Refresh ScrollTrigger positions after all assets are loaded.
@@ -342,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (subtitle) {
                     tl.fromTo(subtitle,
                         { opacity: 0, y: 15, letterSpacing: "1em" },
-                        { opacity: 1, y: 0, letterSpacing: "0.5em", duration: 1.2, ease: "power2.out", clearProps: "transform" }
+                        { opacity: 1, y: 0, letterSpacing: "0.5em", duration: 1.2, ease: "power2.out", clearProps: "transform", force3D: true }
                     );
                 }
 
@@ -350,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (titleWords.length) {
                     tl.fromTo(titleWords,
                         { opacity: 0, y: 40 },
-                        { opacity: 1, y: 0, duration: 1, stagger: 0.08, ease: "expo.out", clearProps: "transform" },
+                        { opacity: 1, y: 0, duration: 1, stagger: 0.08, ease: "expo.out", clearProps: "transform", force3D: true },
                         "-=0.8"
                     );
                 }
@@ -368,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (text) {
                     tl.fromTo(text,
                         { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 1, ease: "power2.out", clearProps: "transform" },
+                        { opacity: 1, y: 0, duration: 1, ease: "power2.out", clearProps: "transform", force3D: true },
                         "-=0.6"
                     );
                 }
@@ -377,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (btn) {
                     tl.fromTo(btn,
                         { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", clearProps: "transform" },
+                        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", clearProps: "transform", force3D: true },
                         "-=0.8"
                     );
                 }
@@ -386,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (cards.length) {
                     tl.fromTo(cards,
                         { opacity: 0, y: 60, scale: 0.95 },
-                        { opacity: 1, y: 0, scale: 1, duration: 1.2, stagger: 0.15, ease: "power3.out", clearProps: "transform" },
+                        { opacity: 1, y: 0, scale: 1, duration: 1.2, stagger: 0.15, ease: "power3.out", clearProps: "transform", force3D: true },
                         "-=1.2"
                     );
                 }
@@ -531,20 +537,20 @@ document.addEventListener("DOMContentLoaded", () => {
             // Characters stagger in from below
             tl.fromTo(titleChars,
                 { opacity: 0, y: 40 },
-                { opacity: 1, y: 0, duration: 0.8, stagger: 0.05, ease: "power3.out", clearProps: "transform" }
+                { opacity: 1, y: 0, duration: 0.8, stagger: 0.05, ease: "power3.out", clearProps: "transform", force3D: true }
             );
 
             // Description text fades in
             tl.fromTo(text,
                 { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 1, ease: "power2.out", clearProps: "transform" },
+                { opacity: 1, y: 0, duration: 1, ease: "power2.out", clearProps: "transform", force3D: true },
                 "-=0.6"
             );
 
             // Button pops in with a bounce
             tl.fromTo(btn,
                 { opacity: 0, scale: 0.95 },
-                { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)", clearProps: "transform" },
+                { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)", clearProps: "transform", force3D: true },
                 "-=0.8"
             );
         };
@@ -625,13 +631,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // Main image: scale down + fade in (photo zoom-out feel)
             tl.fromTo(mainImg,
                 { opacity: 0, y: 50, scale: 1.1 },
-                { opacity: 1, y: 0, scale: 1, duration: 1.4, ease: "power3.out", clearProps: "transform" }
+                { opacity: 1, y: 0, scale: 1, duration: 1.4, ease: "power3.out", clearProps: "transform", force3D: true }
             );
 
             // Small accent image: slides up
             tl.fromTo(smallImg,
                 { opacity: 0, y: 40 },
-                { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", clearProps: "transform" },
+                { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", clearProps: "transform", force3D: true },
                 "-=1"
             );
 
@@ -645,21 +651,21 @@ document.addEventListener("DOMContentLoaded", () => {
             // Title words: staggered slide up
             tl.fromTo(titleWords,
                 { opacity: 0, y: 40 },
-                { opacity: 1, y: 0, duration: 1, stagger: 0.08, ease: "expo.out", clearProps: "transform" },
+                { opacity: 1, y: 0, duration: 1, stagger: 0.08, ease: "expo.out", clearProps: "transform", force3D: true },
                 "-=1"
             );
 
             // Body text: fade in
             tl.fromTo(infoText,
                 { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 1, ease: "power2.out", clearProps: "transform" },
+                { opacity: 1, y: 0, duration: 1, ease: "power2.out", clearProps: "transform", force3D: true },
                 "-=0.8"
             );
 
             // CTA button: slide up
             tl.fromTo(btn,
                 { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", clearProps: "transform" },
+                { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", clearProps: "transform", force3D: true },
                 "-=0.6"
             );
         };
@@ -770,7 +776,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tabInactiveClass: "",
             animation: {
                 from: { opacity: 0, scale: 0.95 },
-                to:   { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }
+                to:   { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out", force3D: true }
             }
         });
     }
@@ -783,7 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tabInactiveClass: "text-secondary hover:text-primary",
             animation: {
                 from: { opacity: 0, scale: 0.98 },
-                to:   { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }
+                to:   { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out", force3D: true }
             }
         });
     }
@@ -796,7 +802,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tabInactiveClass: "text-secondary",
             animation: {
                 from: { opacity: 0, y: 20 },
-                to:   { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+                to:   { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", force3D: true }
             }
         });
     }

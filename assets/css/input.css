@@ -27,6 +27,32 @@
   }
 }
 
+/* Base stability fixes for iOS Safari */
+html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hardware acceleration for animated elements */
+.reveal-subtitle,
+.reveal-title,
+.reveal-text,
+.reveal-btn,
+.reveal-card,
+.hero-title,
+.hero-text,
+.hero-btn,
+.about-img,
+.about-img-small {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
 /* Custom Styles migrated from style.css */
 
 #header {
