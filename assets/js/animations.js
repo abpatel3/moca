@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "(prefers-reduced-motion: reduce)"
     ).matches;
 
+    // Expose accessibility helper globally for use in separate script files (e.g., gsap.js)
+    window.MOCA_REDUCED_MOTION = prefersReducedMotion;
+
     /**
      * Detect if the device is a touch/mobile device.
      * Used to apply mobile-specific animation optimizations.
@@ -277,6 +280,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     };
+
+    // Expose splitting utilities globally for external scripts
+    window.splitLetters = splitLetters;
+    window.splitWords   = splitWords;
 
 
     /* =========================================================================
@@ -871,5 +878,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Button hover effects (all pages)
     initHovers();
+
+    // Run subpage banner animation is now handled in gsap.js
 
 });

@@ -2,13 +2,6 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <script>
-        window.FontAwesomeConfig = {
-            autoReplaceSvg: 'nest'
-        };
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum Shop | MOCA Art India</title>
@@ -21,8 +14,6 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- GSAP & SplitType -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body class="font-sans antialiased text-primary selection:bg-primary selection:text-white bg-white">
@@ -31,40 +22,42 @@
 
     <!-- Header -->
     <header id="header"
-        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface border-b border-black/5">
-        <div id="header-container" class="max-w-[1440px] mx-auto px-4 md:px-12 h-20 flex items-center justify-between transition-all duration-300">
-            <a class="group flex items-center gap-3 text-primary transition-colors duration-500"
-                href="./index.html" data-discover="true">
-                <img src="./assets/img/logo-dark.webp" alt="Moca Logo" class="h-9 w-auto">
+        class="sticky top-0 left-0 right-0 z-50 transition-all duration-300 bg-surface border-b border-black/5">
+        <div id="header-container"
+            class="container mx-auto px-3 h-20 flex items-center justify-between transition-all duration-300">
+            <a class="group flex items-center gap-3 text-primary transition-colors duration-500" href="./index.html"
+                data-discover="true">
+                <img src="./assets/img/logo-dark.webp" alt="Moca Logo" class="h-14 w-auto">
             </a>
 
-            <nav class="hidden md:flex items-center gap-8">
+            <nav class="hidden lg:flex items-center gap-4 lg:gap-8">
+                <a href="./home.html"
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Home</a>
                 <a href="./about.html"
-                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">About</a>
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">About Us</a>
                 <a href="./gallery.html"
-                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Gallery</a>
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Facilities</a>
                 <a href="./residency.html"
-                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Residency</a>
-                <a href="./workshop.html"
-                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Workshops</a>
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Programmes</a>
                 <a href="./events.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Events</a>
-                <a href="./shop.html"
-                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Shop</a>
+                <a href="./press.html"
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Press & Media</a>
+                <a href="./contact.html"
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Contact Us</a>
             </nav>
 
             <div class="flex items-center gap-4">
                 <button
-                    class="hidden lg:flex items-center gap-2 text-sm font-medium text-secondary hover:text-gold transition-all header-text">
+                    class="hidden xl:flex items-center gap-2 text-sm font-medium text-secondary hover:text-gold transition-all header-text">
                     <span>Book Appointment</span>
                 </button>
                 <button
-                    class="bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gold transition-all flex items-center gap-2 text-white shadow-lg">
+                    class="hidden sm:flex bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gold transition-all items-center gap-2 text-white shadow-lg">
                     <span>Get Tickets</span>
                     <i class="fas fa-arrow-right text-[10px]"></i>
                 </button>
-                <button id="mobile-menu-btn"
-                    class="md:hidden text-primary hover:text-gold transition-colors p-2 z-50">
+                <button id="mobile-menu-btn" class="block lg:hidden text-primary hover:text-gold transition-colors p-2 z-50">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
@@ -72,16 +65,24 @@
 
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu"
-            class="fixed inset-0 bg-primary h-screen z-60 translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+            class="fixed inset-0 bg-primary h-screen z-60 translate-x-full transition-transform duration-500 ease-in-out lg:hidden">
             <div class="flex flex-col h-full p-8">
                 <div class="flex items-center justify-between mb-16">
                     <div class="flex items-center gap-3 text-white">
                         <svg viewBox="0 0 100 100" class="w-8 h-8" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0" y="0" width="48" height="48"></rect>
-                            <circle cx="76" cy="24" r="24"></circle>
-                            <path d="M24 52 A 24 24 0 0 0 24 100 V 52 Z"></path>
-                            <path d="M52 100 L76 52 L100 100 Z"></path>
+                            <rect x="5" y="5" width="42" height="42"></rect>
+                            <circle cx="74" cy="26" r="21"></circle>
+                            <path d="M47 74 A 21 21 0 0 1 5 74 L 5 74 Z" transform="rotate(-90 26 74) translate(21, 0)">
+                            </path>
+                            <path d="M47 53 V95 H5 C5 95 5 53 47 53 Z M 26 95 A 21 21 0 0 0 26 53 A 21 21 0 0 0 26 95"
+                                fill-rule="evenodd" fill="transparent"></path>
+                            <g>
+                                <rect x="0" y="0" width="48" height="48"></rect>
+                                <circle cx="74" cy="24" r="24"></circle>
+                                <path d="M24 52 A 24 24 0 0 0 24 100 V 52 Z"></path>
+                                <path d="M52 100 L76 52 L100 100 Z"></path>
+                            </g>
                         </svg>
                         <div class="flex flex-col">
                             <span class="text-xl font-extrabold tracking-tighter leading-none uppercase">Moca</span>
@@ -94,18 +95,21 @@
                     </button>
                 </div>
                 <nav class="flex flex-col gap-8">
+                    <a href="./home.html"
+                    class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Home</a>
                     <a href="./about.html"
-                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">About</a>
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">About Us</a>
                     <a href="./gallery.html"
-                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Gallery</a>
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Facilities</a>
                     <a href="./residency.html"
-                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Residency</a>
-                    <a href="./workshop.html"
-                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Workshops</a>
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Programmes</a>
                     <a href="./events.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
-                    <a href="./shop.html"
-                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
+                    <a href="./press.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Press & Media</a>
+                    <a href="./contact.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Contact Us</a>    
+
                 </nav>
                 <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
                     <button
@@ -128,18 +132,18 @@
     <main id="main-content">
 
         <!-- Hero Section -->
-        <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-primary text-white">
-            <div class="absolute inset-0 opacity-40">
+        <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-primary text-white subpage-banner">
+            <div class="absolute inset-0 opacity-20">
                 <img class="w-full h-full object-cover animate-ken-burns" src="./assets/img/gallery-hero.webp"
                     alt="MOCA Shop Hero">
             </div>
             <div class="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-primary/90"></div>
-            <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
-                <span class="reveal-subtitle text-gold! mb-6 block">The Museum Shop</span>
-                <h1 class="reveal-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Curated
+            <div class="relative container mx-auto px-3 text-center">
+                <span class="sp-subtitle text-gold! mb-6 block">The Museum Shop</span>
+                <h1 class="sp-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Curated
                     <span class="not-italic font-light opacity-90">Objects</span>
                 </h1>
-                <p class="reveal-text text-lg max-w-xl mx-auto text-white/70 leading-relaxed font-light">
+                <p class="sp-text text-lg max-w-xl mx-auto text-white/70 leading-relaxed font-light">
                     Explore a selection of limited edition prints, curatorial publications, and archival sculptures.
                 </p>
             </div>
@@ -172,7 +176,7 @@
 
         <!-- Product Grid -->
         <section class="py-24 md:py-32">
-            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+            <div class="container mx-auto px-3">
                 <div id="shop-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
 
                     <!-- Product 1 -->
@@ -320,7 +324,7 @@
 
     <!-- Footer -->
     <footer id="footer" class="bg-surface pt-20 md:pt-32 pb-16">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-12">
+        <div class="container mx-auto px-3">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-24">
                 <div class="sm:col-span-2 md:col-span-5">
                     <a class="group flex items-center gap-3 text-primary mb-8 md:mb-10" href="#/">
@@ -404,8 +408,19 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- Scripts -->
+    <script>
+        window.FontAwesomeConfig = {
+            autoReplaceSvg: 'nest'
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/gsap.js"></script>
 </body>
 
 </html>

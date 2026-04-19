@@ -29,11 +29,14 @@
 
 /* Base stability fixes for iOS Safari */
 html, body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     position: relative;
     width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+main{
+    overflow-x: hidden;
 }
 
 /* Hardware acceleration for animated elements */
@@ -83,3 +86,10 @@ header.scrolled .logo-dark {
         header .logo-light {
             display: block;
         }
+
+.reveal-title .word{
+    display: inline-block;
+} 
+.reveal-subtitle{
+    letter-spacing: .2em;
+}       

@@ -51,50 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => toggleMobileMenu(false));
     });
 
-    // --- Header Scroll Effect ---
-    let lastScrollY = window.scrollY;
-
-    const updateHeaderState = () => {
-        const { header } = elements;
-        if (!header) return;
-
-        const currentScrollY = window.scrollY;
-        const isScrollingDown = currentScrollY > lastScrollY && currentScrollY > 100;
-        const shouldBeSlim = currentScrollY > CONFIG.scrollThreshold;
-
-        // Sticky visual state (Shadow/Blur)
-        if (shouldBeSlim) {
-            header.classList.add('shadow-xl', 'bg-white/80', 'backdrop-blur-md', 'py-1');
-            header.classList.remove('bg-surface');
-        } else {
-            header.classList.remove('shadow-xl', 'bg-white/80', 'backdrop-blur-md', 'py-1');
-            header.classList.add('bg-surface');
-        }
-
-        // Hide/Show logic
-        if (isScrollingDown) {
-            header.classList.add('-translate-y-full');
-        } else {
-            header.classList.remove('-translate-y-full');
-        }
-
-        lastScrollY = currentScrollY;
-    };
-
-    // Optimized scroll listener with requestAnimationFrame
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                updateHeaderState();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-
-    // Initial check
-    updateHeaderState();
+    // --- Header Scroll Effect Removed ---
+    // Header remains static as per user request
 
     // --- Swiper Utilities ---
     const initSwipers = () => {
