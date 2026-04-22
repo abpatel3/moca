@@ -30,7 +30,7 @@
                 <img src="./assets/img/logo-dark.webp" alt="Moca Logo" class="h-14 w-auto">
             </a>
 
-            <nav class="hidden lg:flex items-center gap-4 lg:gap-8">
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-8">
                 <a href="./home.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Home</a>
                 <a href="./about.html"
@@ -42,6 +42,8 @@
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Programmes</a>
                 <a href="./events.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Events</a>
+                <a href="./shop.html"
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Shop</a>
                 <a href="./press.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Press &
                     Media</a>
@@ -98,7 +100,7 @@
                         <i class="fas fa-times text-2xl"></i>
                     </button>
                 </div>
-                <nav class="flex flex-col gap-8">
+                <nav class="flex flex-col gap-8 overflow-y-auto">
                     <a href="./home.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Home</a>
                     <a href="./about.html"
@@ -109,6 +111,8 @@
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Programmes</a>
                     <a href="./events.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="./shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
                     <a href="./press.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Press & Media</a>
                     <a href="./contact.html"
@@ -121,11 +125,14 @@
                         Book Appointment
                     </a>
                     <div class="flex justify-center gap-6">
-                        <a href="https://instagram.com/moca" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                        <a href="https://instagram.com/moca"
+                            class="hover:text-gold transition-all duration-500 text-white/50"><i
                                 class="fab fa-instagram text-xl"></i></a>
-                        <a href="https://facebook.com/moca" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                        <a href="https://facebook.com/moca"
+                            class="hover:text-gold transition-all duration-500 text-white/50"><i
                                 class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="https://twitter.com/moca" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                        <a href="https://twitter.com/moca"
+                            class="hover:text-gold transition-all duration-500 text-white/50"><i
                                 class="fab fa-vimeo-v text-xl"></i></a>
                     </div>
                 </div>
@@ -164,7 +171,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
                     <!-- Artwork 1 -->
-                    <div class="reveal-card group">
+                    <div class="reveal-card group gallery-lightbox-item cursor-pointer">
                         <div class="rounded-[2.5rem] overflow-hidden aspect-4/5 mb-8 shadow-2xl relative">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 src="./assets/img/gallery-modern.webp" alt="Geometric Voids">
@@ -188,7 +195,7 @@
                     </div>
 
                     <!-- Artwork 2 -->
-                    <div class="reveal-card group">
+                    <div class="reveal-card group gallery-lightbox-item cursor-pointer">
                         <div class="rounded-[2.5rem] overflow-hidden aspect-4/5 mb-8 shadow-2xl relative">
                             <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-transform duration-1000 group-hover:scale-110"
                                 src="./assets/img/gallery-tradition.webp" alt="Heritage Overlays">
@@ -212,7 +219,7 @@
                     </div>
 
                     <!-- Artwork 3 -->
-                    <div class="reveal-card group">
+                    <div class="reveal-card group gallery-lightbox-item cursor-pointer">
                         <div class="rounded-[2.5rem] overflow-hidden aspect-4/5 mb-8 shadow-2xl relative">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 src="./assets/img/gallery-digital.webp" alt="Digital Horizons">
@@ -238,102 +245,36 @@
             </div>
         </section>
 
-        <!-- Gallery Block 1: The Modern Wing -->
-        <section class="py-24 md:py-32 bg-white">
-            <div class="container mx-auto px-3">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-                    <div class="max-w-2xl">
-                        <span class="reveal-subtitle mb-6 block">Modernist Perspective</span>
-                        <h2 class="reveal-title font-serif text-4xl md:text-6xl text-primary mb-6 leading-tight">The
-                            <span class="italic text-gold opacity-90">Modern Wing</span>
-                        </h2>
-                        <p class="reveal-text text-secondary text-lg leading-relaxed">
-                            Focusing on architectural gravity and minimalist expression. This wing houses works that
-                            redefine our understanding of structural art and its interaction with natural light.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                    <div class="reveal-card lg:sticky lg:top-32">
-                        <div class="rounded-4xl overflow-hidden aspect-4/3 shadow-2xl relative group">
-                            <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                                src="./assets/img/gallery-modern.webp" alt="Modern Wing Installation">
-                            <div
-                                class="absolute bottom-10 left-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <h4 class="font-serif text-3xl mb-2">Geometric Voids</h4>
-                                <p class="text-gold tracking-widest uppercase text-[9px] font-bold">Minimalism • 2024
-                                </p>
-                                <p class="text-white/60 text-[10px] mt-1 italic">by Aarav Sharma</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-10">
-                        <div class="reveal-card">
-                            <h3 class="font-serif text-3xl mb-6 text-primary">Spatial Dialogue</h3>
-                            <p class="text-secondary text-base leading-relaxed mb-8">
-                                Each sculpture in this wing is positioned to interact with the sun's path, creating
-                                shifting shadows that become part of the artwork itself.
-                            </p>
-                            <div class="w-full aspect-video rounded-4xl bg-surface relative overflow-hidden group">
-                                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=1974"
-                                    class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                                    alt="Sculpture detail">
-                            </div>
-                        </div>
-                        <div class="reveal-card bg-surface p-10 md:p-14 rounded-4xl">
-                            <h4 class="font-serif text-2xl mb-4 text-primary">Current Exhibition</h4>
-                            <p class="text-secondary text-sm mb-8 leading-relaxed">
-                                Featuring works by renowned minimalist sculptors across South Asia, exploring themes of
-                                silence and spatial resonance.
-                            </p>
-                            <a href="./events.html"
-                                class="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] text-primary group transition-all about-btn">
-                                <span>Artist List</span>
-                                <div
-                                    class="w-12 h-px bg-gold transform group-hover:translate-x-3 transition-transform duration-500">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <section class="relative py-24 md:py-40 overflow-hidden bg-primary">
+            <div class="absolute inset-0 z-0">
+                <img src="./assets/img/subscribe.webp"
+                    class="w-full h-full object-cover opacity-30 transform scale-105 transition-transform duration-[10s]"
+                    alt="MOCA Experience">
+                <div class="absolute inset-0 bg-linear-to-b from-primary via-transparent to-primary opacity-20"></div>
+                <div class="absolute inset-0 bg-black/40"></div>
             </div>
-        </section>
-        <!-- Gallery Block 3: Digital Horizons -->
-        <section class="py-24 md:py-40 bg-primary text-white overflow-hidden">
-            <div class="container mx-auto px-3">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div>
-                        <span class="reveal-subtitle text-gold! mb-6 block">Digital Frontier</span>
-                        <h2 class="reveal-title font-serif text-4xl md:text-7xl mb-10 leading-tight">Digital <br><span
-                                class="italic text-white/50">Horizons</span></h2>
-                        <div class="w-16 h-[2px] bg-gold mb-10 rounded-full reveal-line"></div>
-                        <p class="reveal-text text-white/70 text-lg mb-10 leading-relaxed font-light">
-                            The frontier of immersion. MOCA's digital art lab features AI-generated installations, VR
-                            experiences, and multi-sensory projection mapping.
-                        </p>
+
+            <div class="container mx-auto px-3 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="reveal-subtitle text-gold! block mb-8">The MOCA Experience</span>
+                    <h2 class="reveal-title font-serif text-5xl md:text-7xl mb-8 text-white leading-tight">Art Beyond
+                        <span class="italic text-gold">Boundaries</span>
+                    </h2>
+                    <p
+                        class="reveal-text text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                        Step into a world where traditional heritage meets future-forward expression. Our curated
+                        galleries offer a sanctuary for reflection, inspiration, and discovery.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center reveal-btn">
                         <a href="./contact.html"
-                            class="reveal-btn bg-white text-primary px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition-all duration-500 shadow-xl inline-block">
-                            Experience VR Lab
+                            class="bg-gold text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl inline-block">
+                            Book Your Visit
                         </a>
-                    </div>
-                    <div class="reveal-card">
-                        <div class="relative">
-                            <div class="absolute -inset-10 bg-gold/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
-                            <div class="rounded-4xl overflow-hidden aspect-square shadow-2xl relative">
-                                <img class="w-full h-full object-cover transition-all duration-[2s] hover:scale-110"
-                                    src="./assets/img/gallery-digital.webp" alt="Digital Art Lab">
-                                <div
-                                    class="absolute inset-0 bg-primary/40 opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-center p-8 backdrop-blur-sm">
-                                    <div>
-                                        <h4 class="font-serif text-3xl text-white mb-2">Solar Flux</h4>
-                                        <p class="text-gold tracking-widest text-[9px] uppercase font-bold mb-4">Digital
-                                            • 2024</p>
-                                        <p class="text-white/80 text-sm italic">by Vikram Mehta</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="./shop.html"
+                            class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all inline-block">
+                            Explore Shop
+                        </a>
                     </div>
                 </div>
             </div>
@@ -370,17 +311,14 @@
                     <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
                     <ul class="space-y-4">
                         <li><a href="./gallery.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Current
-                                Exhibitions</a></li>
-                        <li><a href="./residency.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
-                                Residency</a></li>
-                        <li><a href="./workshop.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
-                                Labs</a></li>
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery</a></li>
                         <li><a href="./shop.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
-                                Shop</a></li>
+                                class="text-sm text-secondary hover:text-primary transition-colors">Shop</a></li>
+
+                        <li><a href="./facilities.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Facilities</a></li>
+                        <li><a href="./programmes.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Programmes</a></li>
                     </ul>
                 </div>
 
@@ -393,8 +331,9 @@
                         <li><a href="./press.html"
                                 class="text-sm text-secondary hover:text-primary transition-colors">Press &
                                 Media</a></li>
-                        <li><a href="./contact.html" class="text-sm text-secondary hover:text-primary transition-colors">Support
-                                Us</a></li>
+                        <li><a href="./events.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Events & News</a>
+                        </li>
                         <li><a href="./contact.html"
                                 class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
                         </li>
@@ -432,13 +371,66 @@
             </div>
         </div>
     </footer>
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-100 bg-primary/95 opacity-0 pointer-events-none transition-all duration-500 backdrop-blur-xl flex items-center justify-center p-6 md:p-12">
+        <button id="close-lightbox"
+            class="absolute top-8 right-8 text-white/50 hover:text-gold transition-colors p-4 z-50">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <div class="relative max-w-5xl w-full h-full flex items-center justify-center">
+            <img id="lightbox-img" src=""
+                class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl scale-95 transition-transform duration-500"
+                alt="Gallery Full View">
+        </div>
+    </div>
 
-    <!-- Scripts -->
     <!-- Scripts -->
     <script>
         window.FontAwesomeConfig = {
             autoReplaceSvg: 'nest'
         };
+
+        // Lightbox Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeLightbox = document.getElementById('close-lightbox');
+            const galleryItems = document.querySelectorAll('.gallery-lightbox-item');
+
+            if (galleryItems.length > 0 && lightbox && lightboxImg) {
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const img = item.querySelector('img');
+                        if (img) {
+                            lightboxImg.src = img.src;
+                            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+                            lightboxImg.classList.remove('scale-95');
+                            lightboxImg.classList.add('scale-100');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+                });
+
+                const closeHandler = () => {
+                    lightbox.classList.add('opacity-0', 'pointer-events-none');
+                    lightboxImg.classList.remove('scale-100');
+                    lightboxImg.classList.add('scale-95');
+                    document.body.style.overflow = '';
+                    setTimeout(() => { lightboxImg.src = ''; }, 500);
+                };
+
+                closeLightbox?.addEventListener('click', closeHandler);
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeHandler();
+                });
+
+                // Close on Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') closeHandler();
+                });
+            }
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>

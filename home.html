@@ -30,7 +30,7 @@
                 <img src="./assets/img/logo-dark.webp" alt="Moca Logo" class="h-14 w-auto">
             </a>
 
-            <nav class="hidden lg:flex items-center gap-4 lg:gap-8">
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-8">
                 <a href="./home.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Home</a>
                 <a href="./about.html"
@@ -42,6 +42,8 @@
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Programmes</a>
                 <a href="./events.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Events</a>
+                <a href="./shop.html"
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Shop</a>
                 <a href="./press.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Press &
                     Media</a>
@@ -98,7 +100,7 @@
                         <i class="fas fa-times text-2xl"></i>
                     </button>
                 </div>
-                <nav class="flex flex-col gap-8">
+                <nav class="flex flex-col gap-8 overflow-y-auto">
                     <a href="./home.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Home</a>
                     <a href="./about.html"
@@ -109,6 +111,8 @@
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Programmes</a>
                     <a href="./events.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="./shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
                     <a href="./press.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Press & Media</a>
                     <a href="./contact.html"
@@ -263,7 +267,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <!-- Gallery Card 1 -->
-                    <div class="group cursor-pointer reveal-card">
+                    <div class="group cursor-pointer reveal-card gallery-lightbox-item">
                         <div
                             class="rounded-[2.5rem] overflow-hidden h-[400px] md:h-[500px] mb-6 md:mb-8 relative shadow-xl">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -286,7 +290,7 @@
                     </div>
 
                     <!-- Gallery Card 2 -->
-                    <div class="group cursor-pointer md:mt-16 reveal-card">
+                    <div class="group cursor-pointer md:mt-16 reveal-card gallery-lightbox-item">
                         <div class="rounded-[2.5rem] overflow-hidden h-[500px] mb-8 relative shadow-xl">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 src="./assets/img/art-2.webp" alt="Modern Sculpture 2">
@@ -308,7 +312,7 @@
                     </div>
 
                     <!-- Gallery Card 3 -->
-                    <div class="group cursor-pointer reveal-card">
+                    <div class="group cursor-pointer reveal-card gallery-lightbox-item">
                         <div class="rounded-[2.5rem] overflow-hidden h-[500px] mb-8 relative shadow-xl">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 src="./assets/img/art-3.webp" alt="Digital Vision 3">
@@ -332,26 +336,26 @@
             </div>
         </section>
 
-        <!-- Artist Residency Section -->
-        <section id="residency" class="py-16 md:py-24 bg-surface">
+        <!-- Museum Facilities Section -->
+        <section id="facilities" class="py-16 md:py-24 bg-surface">
             <div class="container mx-auto px-3">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20 gap-8">
                     <div class="max-w-3xl">
                         <span
-                            class="text-[10px] font-black uppercase tracking-[0.5em] text-gold block mb-4 md:mb-6 reveal-subtitle">Educational
-                            Pillar</span>
-                        <h2 class="font-serif text-3xl md:text-5xl mb-4 text-primary leading-tight reveal-title">Artist
-                            <span class="italic font-light text-gold opacity-90">Residency</span>
+                            class="text-[10px] font-black uppercase tracking-[0.5em] text-gold block mb-4 md:mb-6 reveal-subtitle">Our
+                            Infrastructure</span>
+                        <h2 class="font-serif text-3xl md:text-5xl mb-4 text-primary leading-tight reveal-title">Museum
+                            <span class="italic font-light text-gold opacity-90">Facilities</span>
                         </h2>
                         <div class="w-16 h-[1.5px] bg-gold mt-4 rounded-full reveal-line"></div>
                         <p class="text-secondary text-sm md:text-base leading-relaxed mt-6 max-w-xl reveal-text">
-                            Supporting creators
-                            through
-                            specialized space, resources, and institutional dialogue.</p>
+                            Providing state-of-the-art spaces designed to foster creativity, exploration, and
+                            institutional
+                            dialogue.</p>
                     </div>
-                    <a href="./residency.html"
+                    <a href="./facilities.html"
                         class="flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] text-primary group transition-all shrink-0 reveal-btn">
-                        <span>Apply Now</span>
+                        <span>Explore More</span>
                         <div
                             class="w-12 h-px bg-gold transform group-hover:translate-x-3 transition-transform duration-500">
                         </div>
@@ -359,61 +363,59 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-                    <!-- Residency Card 1 -->
+                    <!-- Facility Card 1 -->
                     <div class="group cursor-pointer reveal-card">
                         <div class="relative rounded-[2.5rem] overflow-hidden h-[450px] mb-8 shadow-xl">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                src="./assets/img/res-1.webp" alt="Studio Access">
+                                src="./assets/img/gallery-modern.webp" alt="Art Gallery Spaces">
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500">
                             </div>
                             <div class="absolute bottom-8 left-8 right-8">
                                 <span
-                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Spring
-                                    2024</span>
-                                <h3 class="font-serif text-2xl text-white">Studio Access Program</h3>
+                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Exhibition</span>
+                                <h3 class="font-serif text-2xl text-white">Art Gallery Spaces</h3>
                             </div>
                         </div>
-                        <p class="text-secondary text-sm leading-relaxed px-2">3-month fully funded residency including
-                            24/7 private studio and monthly stipend.</p>
+                        <p class="text-secondary text-sm leading-relaxed px-2">Thoughtfully designed gallery spaces that
+                            host solo, group, and curated exhibitions across diverse mediums.</p>
                     </div>
 
-                    <!-- Residency Card 2 -->
+                    <!-- Facility Card 2 -->
                     <div class="group cursor-pointer md:mt-12 reveal-card">
                         <div class="relative rounded-[2.5rem] overflow-hidden h-[450px] mb-8 shadow-xl">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                src="./assets/img/res-2.webp" alt="Materials & Process">
+                                src="./assets/img/hero-3.webp" alt="Screening Room">
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500">
                             </div>
                             <div class="absolute bottom-8 left-8 right-8">
                                 <span
-                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Summer
-                                    2024</span>
-                                <h3 class="font-serif text-2xl text-white">Materials & Process</h3>
+                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Dialogue</span>
+                                <h3 class="font-serif text-2xl text-white">Seminar & Screening</h3>
                             </div>
                         </div>
-                        <p class="text-secondary text-sm leading-relaxed px-2">Focus on sculptural practices with full
-                            access to specialized ceramic and metal workshops.</p>
+                        <p class="text-secondary text-sm leading-relaxed px-2">Dedicated spaces for film screenings,
+                            artist
+                            talks, and lectures, supporting interdisciplinary engagement.</p>
                     </div>
 
-                    <!-- Residency Card 3 -->
+                    <!-- Facility Card 3 -->
                     <div class="group cursor-pointer reveal-card">
                         <div class="relative rounded-[2.5rem] overflow-hidden h-[450px] mb-8 shadow-xl">
                             <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                src="./assets/img/res-3.webp" alt="Digital Arts Fellowship">
+                                src="./assets/img/moca-india.webp" alt="Sculpture Courtyard">
                             <div
                                 class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500">
                             </div>
                             <div class="absolute bottom-8 left-8 right-8">
                                 <span
-                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Fall
-                                    2024</span>
-                                <h3 class="font-serif text-2xl text-white">Digital Arts Fellowship</h3>
+                                    class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest mb-4">Outdoor</span>
+                                <h3 class="font-serif text-2xl text-white">Sculpture Courtyard</h3>
                             </div>
                         </div>
-                        <p class="text-secondary text-sm leading-relaxed px-2">For artists pushing the boundaries of VR,
-                            generative AI, and immersive digital installations.</p>
+                        <p class="text-secondary text-sm leading-relaxed px-2">Open-air spaces designed for displaying
+                            sculptures and hosting outdoor art activities amidst nature.</p>
                     </div>
                 </div>
             </div>
@@ -886,17 +888,14 @@
                     <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
                     <ul class="space-y-4">
                         <li><a href="./gallery.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Current
-                                Exhibitions</a></li>
-                        <li><a href="./residency.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
-                                Residency</a></li>
-                        <li><a href="./workshop.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
-                                Labs</a></li>
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery</a></li>
                         <li><a href="./shop.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
-                                Shop</a></li>
+                                class="text-sm text-secondary hover:text-primary transition-colors">Shop</a></li>
+
+                        <li><a href="./facilities.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Facilities</a></li>
+                        <li><a href="./programmes.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Programmes</a></li>
                     </ul>
                 </div>
 
@@ -909,9 +908,9 @@
                         <li><a href="./press.html"
                                 class="text-sm text-secondary hover:text-primary transition-colors">Press &
                                 Media</a></li>
-                        <li><a href="./contact.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Support
-                                Us</a></li>
+                        <li><a href="./events.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Events & News</a>
+                        </li>
                         <li><a href="./contact.html"
                                 class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
                         </li>
@@ -950,11 +949,66 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 z-100 bg-primary/95 opacity-0 pointer-events-none transition-all duration-500 backdrop-blur-xl flex items-center justify-center p-6 md:p-12">
+        <button id="close-lightbox"
+            class="absolute top-8 right-8 text-white/50 hover:text-gold transition-colors p-4 z-50">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <div class="relative max-w-5xl w-full h-full flex items-center justify-center">
+            <img id="lightbox-img" src=""
+                class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl scale-95 transition-transform duration-500"
+                alt="Gallery Full View">
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script>
         window.FontAwesomeConfig = {
             autoReplaceSvg: 'nest'
         };
+
+        // Lightbox Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeLightbox = document.getElementById('close-lightbox');
+            const galleryItems = document.querySelectorAll('.gallery-lightbox-item');
+
+            if (galleryItems.length > 0 && lightbox && lightboxImg) {
+                galleryItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const img = item.querySelector('img');
+                        if (img) {
+                            lightboxImg.src = img.src;
+                            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+                            lightboxImg.classList.remove('scale-95');
+                            lightboxImg.classList.add('scale-100');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+                });
+
+                const closeHandler = () => {
+                    lightbox.classList.add('opacity-0', 'pointer-events-none');
+                    lightboxImg.classList.remove('scale-100');
+                    lightboxImg.classList.add('scale-95');
+                    document.body.style.overflow = '';
+                    setTimeout(() => { lightboxImg.src = ''; }, 500);
+                };
+
+                closeLightbox?.addEventListener('click', closeHandler);
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeHandler();
+                });
+
+                // Close on Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') closeHandler();
+                });
+            }
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>

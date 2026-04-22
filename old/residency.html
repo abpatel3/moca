@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshops | MOCA Gandhinagar</title>
+    <title>Residency | MOCA Gandhinagar</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -26,7 +26,7 @@
                 <img src="./assets/img/logo-dark.webp" alt="Moca Logo" class="h-14 w-auto">
             </a>
 
-            <nav class="hidden lg:flex items-center gap-4 lg:gap-8">
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-8">
                 <a href="./home.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Home</a>
                 <a href="./about.html"
@@ -38,6 +38,8 @@
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Programmes</a>
                 <a href="./events.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Events</a>
+                <a href="./shop.html"
+                    class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Shop</a>
                 <a href="./press.html"
                     class="text-sm font-medium text-secondary hover:text-gold transition-colors header-text">Press &
                     Media</a>
@@ -94,7 +96,7 @@
                         <i class="fas fa-times text-2xl"></i>
                     </button>
                 </div>
-                <nav class="flex flex-col gap-8">
+                <nav class="flex flex-col gap-8 overflow-y-auto">
                     <a href="./home.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Home</a>
                     <a href="./about.html"
@@ -105,6 +107,8 @@
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Programmes</a>
                     <a href="./events.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Events</a>
+                    <a href="./shop.html"
+                        class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Shop</a>
                     <a href="./press.html"
                         class="text-4xl font-serif text-white! hover:text-gold! transition-colors">Press & Media</a>
                     <a href="./contact.html"
@@ -117,11 +121,14 @@
                         Book Appointment
                     </a>
                     <div class="flex justify-center gap-6">
-                        <a href="https://instagram.com/moca" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                        <a href="https://instagram.com/moca"
+                            class="hover:text-gold transition-all duration-500 text-white/50"><i
                                 class="fab fa-instagram text-xl"></i></a>
-                        <a href="https://facebook.com/moca" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                        <a href="https://facebook.com/moca"
+                            class="hover:text-gold transition-all duration-500 text-white/50"><i
                                 class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="https://twitter.com/moca" class="hover:text-gold transition-all duration-500 text-white/50"><i
+                        <a href="https://twitter.com/moca"
+                            class="hover:text-gold transition-all duration-500 text-white/50"><i
                                 class="fab fa-vimeo-v text-xl"></i></a>
                     </div>
                 </div>
@@ -134,124 +141,148 @@
         <!-- Hero Section -->
         <section class="relative py-24 md:py-40 overflow-hidden bg-primary text-white subpage-banner">
             <div class="absolute inset-0 opacity-20">
-                <img class="w-full h-full object-cover animate-ken-burns" src="./assets/img/workshop-traditional.webp"
-                    alt="MOCA Workshops">
+                <img class="w-full h-full object-cover animate-ken-burns" src="./assets/img/residency-hero.webp"
+                    alt="Artist Residency Studio">
             </div>
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full"></div>
             <div class="relative container mx-auto px-3 text-center">
-                <span class="sp-subtitle text-gold! mb-6 block">Learning Labs</span>
-                <h1 class="sp-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Mastering
-                    <br><span class="italic font-light">The Craft</span>
+                <span class="sp-subtitle text-gold! mb-6 block">Artist-in-Residence</span>
+                <h1 class="sp-title font-serif text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight">Catalyzing
+                    <br><span class="italic font-light">New Realities</span>
                 </h1>
                 <p class="sp-text text-lg md:text-xl max-w-2xl mx-auto text-white/80 leading-relaxed font-light">
-                    From ancient earth-working to algorithmic synthesis. Our workshops bridge the gap between heritage
-                    and future.
+                    An intensive three-month immersion for visionaries, providing the space, resources, and intellectual
+                    freedom to redefine contemporary art from the Global South.
                 </p>
             </div>
         </section>
 
-        <!-- Traditional Section -->
+        <!-- Description Section -->
         <section class="py-24 md:py-32 bg-white">
             <div class="container mx-auto px-3">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div class="reveal-card order-2 lg:order-1">
-                        <div class="rounded-4xl overflow-hidden aspect-4/5 shadow-22xl relative">
-                            <img class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110"
-                                src="./assets/img/workshop-traditional.webp" alt="Traditional Pottery Workshop">
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <span class="reveal-subtitle mb-6 block">Legacy Techniques</span>
-                        <h2 class="reveal-title font-serif text-4xl md:text-6xl text-primary mb-10 leading-tight">Earth
-                            & <span class="italic text-gold opacity-90">Pigment</span></h2>
+                    <div class="max-w-xl">
+                        <span class="reveal-subtitle mb-6 block">The Sanctuary</span>
+                        <h2 class="reveal-title font-serif text-4xl md:text-6xl text-primary mb-10 leading-tight">A
+                            Space for <br><span class="italic text-gold opacity-90">Deep Focus</span></h2>
                         <div class="w-16 h-[2px] bg-gold mb-12 rounded-full reveal-line"></div>
                         <p class="reveal-text text-secondary text-lg mb-8 leading-relaxed">
-                            Our traditional craft labs focus on the tactile relationship between the artist and raw
-                            matter. Led by generational masters, these sessions explore the alchemy of local clay,
-                            naturally sourced pigments, and ancestral weaving patterns.
+                            MOCA's residency program offers four state-of-the-art studio apartments specifically
+                            designed for large-scale creation and intellectual inquiry. Each sanctuary provides natural
+                            overhead lighting, museum-grade archival tools, and individual meditation gardens.
                         </p>
-                        <p class="reveal-text text-secondary list-disc pl-6 space-y-4 mb-10">
-                            <strong>Upcoming Labs:</strong><br>
-                            • Sculptural Earth-Forming (Weekly Sat)<br>
-                            • Natural Dye Alchemy (March 15-20)<br>
-                            • Subcontinental Weaving Patterns (April)
+                        <p class="reveal-text text-secondary text-lg mb-10 leading-relaxed">
+                            Whether you are working with traditional pigment or generative algorithms, the residency
+                            provides a vacuum from the noise of the world, allowing for a singular focus on the artistic
+                            soul.
                         </p>
-                        <a href="./contact.html"
-                            class="reveal-btn mt-4 flex items-center gap-4 text-[11px] font-black uppercase tracking-[0.4em] text-primary group transition-all about-btn">
-                            <span>Register for Lab</span>
-                            <div
-                                class="w-12 h-px bg-gold transform group-hover:translate-x-3 transition-transform duration-500">
+                        <div class="grid grid-cols-2 gap-8 reveal-card">
+                            <div class="border-l border-gold pl-6">
+                                <span class="text-3xl font-serif text-primary block mb-1">24/7</span>
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Studio
+                                    Access</span>
                             </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Digital Section -->
-        <section class="py-24 md:py-32 bg-surface">
-            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div>
-                        <span class="reveal-subtitle mb-6 block">The Tech Nexus</span>
-                        <h2 class="reveal-title font-serif text-4xl md:text-6xl text-primary mb-10 leading-tight">Code &
-                            <span class="italic text-gold opacity-90">Ether</span>
-                        </h2>
-                        <div class="w-16 h-[2px] bg-gold mb-12 rounded-full reveal-line"></div>
-                        <p class="reveal-text text-secondary text-lg mb-8 leading-relaxed">
-                            MOCA's digital synthesis lab is a laboratory for the future of expression. Here, code
-                            becomes brushstrokes, and virtual spaces become immersive galleries. We empower creators to
-                            harness AI, VR, and multi-sensory mapping as primary artistic tools.
-                        </p>
-                        <div class="reveal-card bg-white p-8 rounded-3xl shadow-sm inline-block">
-                            <span class="text-gold font-bold uppercase tracking-widest text-xs block mb-2">Next
-                                Session</span>
-                            <h4 class="text-primary font-serif text-2xl mb-4 italic">Algorithmic Sculpting</h4>
-                            <p class="text-secondary text-xs opacity-70">March 22, 2024 • 2:00 PM – 6:00 PM</p>
+                            <div class="border-l border-gold pl-6">
+                                <span class="text-3xl font-serif text-primary block mb-1">Full</span>
+                                <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Archival
+                                    Support</span>
+                            </div>
                         </div>
                     </div>
                     <div class="reveal-card">
-                        <div class="rounded-4xl overflow-hidden aspect-video shadow-2xl relative">
+                        <div class="rounded-4xl overflow-hidden aspect-4/5 shadow-22xl relative">
                             <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                                src="./assets/img/workshop-digital.webp" alt="Digital Art lab">
-                            <div class="absolute inset-0 bg-primary/10"></div>
+                                src="./assets/img/residency-hero.webp" alt="Studio detail">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Newsletter Style Section -->
-        <section id="workshop-cta" class="relative py-24 md:py-40 overflow-hidden bg-primary">
+        <!-- Community Section -->
+        <section class="py-24 md:py-32 bg-surface">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+                    <div class="lg:col-span-7 reveal-card order-2 lg:order-1">
+                        <div class="rounded-4xl overflow-hidden aspect-video shadow-2xl relative">
+                            <img class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                                src="./assets/img/residency-community.webp" alt="Communal Discussion Space">
+                            <div class="absolute inset-0 bg-primary/10"></div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 order-1 lg:order-2">
+                        <span class="reveal-subtitle mb-6 block">Intellectual Exchange</span>
+                        <h2 class="reveal-title font-serif text-4xl md:text-5xl text-primary mb-8 leading-tight">
+                            Collective <span class="italic text-gold opacity-90">Wisdom</span></h2>
+                        <p class="reveal-text text-secondary text-base leading-relaxed mb-10 opacity-80">
+                            Beyond the private studio, MOCA fosters a high-impact intellectual community. Weekly "Nexus
+                            Diologues" bring together resident artists with global curators, philosophers, and
+                            architectural historians.
+                        </p>
+                        <ul class="space-y-6 reveal-text">
+                            <li class="flex items-start gap-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2"></div>
+                                <p class="text-secondary text-sm">Monthly critique sessions with visiting museum
+                                    directors.</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2"></div>
+                                <p class="text-secondary text-sm">Shared resource library of rare subcontinental art
+                                    volumes.</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2"></div>
+                                <p class="text-secondary text-sm">Cross-disciplinary research grants for collaborative
+                                    projects.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Calls Section (Newsletter Style) -->
+        <section id="open-calls" class="relative py-24 md:py-40 overflow-hidden bg-primary">
+            <!-- Background Image with Overlay -->
             <div class="absolute inset-0 z-0">
                 <img src="./assets/img/subscribe.webp"
-                    class="w-full h-full object-cover opacity-30 transform scale-105 transition-transform duration-[10s]"
-                    alt="MOCA Movement">
-                <div class="absolute inset-0 bg-linear-to-b from-primary via-transparent to-primary opacity-20"></div>
+                    class="w-full h-full object-cover opacity-30 transform scale-105 active:scale-110 transition-transform duration-[10s]"
+                    alt="MOCA Studio">
+                <div class="absolute inset-0 bg-linear-to-b from-primary via-transparent to-primary opacity-10">
+                </div>
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
 
             <div class="container mx-auto px-3 relative z-10">
                 <div class="text-center max-w-3xl mx-auto">
-                    <span class="reveal-subtitle text-gold! block mb-8">Secure Your Place</span>
-                    <h2 class="reveal-title font-serif text-5xl md:text-7xl mb-8 text-white leading-tight">Elevate Your
-                        <span class="italic text-gold">Craft</span>
+                    <span class="reveal-subtitle text-gold! block mb-8">Join the Residency</span>
+                    <h2 class="font-serif text-4xl md:text-6xl mb-6 md:mb-8 text-white leading-tight">Define Your
+                        <span class="italic text-gold">Artistic Journey</span>
                     </h2>
                     <p
                         class="reveal-text text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                        Join our curated sessions led by global pioneers. Limited capacity ensures personalized guidance
-                        and deep immersion.
+                        We are currently accepting applications for the Fall 2024 Residency Program. Looking for artists
+                        whose work challenges the intersections of heritage and digital future.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-6 justify-center reveal-btn">
-                        <a href="./events.html"
-                            class="bg-gold text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl inline-block">
-                            View Calendar
-                        </a>
                         <a href="./contact.html"
-                            class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all inline-block">
-                            Private Mentorship
+                            class="bg-gold text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl inline-block">
+                            Apply Online
                         </a>
+                        <a href="#"
+                            class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all inline-block">
+                            Download Prospectus
+                        </a>
+                    </div>
+
+                    <div
+                        class="flex flex-wrap justify-center gap-10 mt-16 text-[10px] text-white/40 font-bold uppercase tracking-[0.3em]">
+                        <span class="flex items-center gap-3"><i class="far fa-calendar-alt text-gold"></i> 3
+                            Months</span>
+                        <span class="flex items-center gap-3"><i class="fas fa-tools text-gold"></i> Full Studio</span>
+                        <span class="flex items-center gap-3"><i class="fas fa-globe text-gold"></i> Global
+                            Network</span>
                     </div>
                 </div>
             </div>
@@ -288,17 +319,14 @@
                     <h4 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6 md:mb-8">Experience</h4>
                     <ul class="space-y-4">
                         <li><a href="./gallery.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Current
-                                Exhibitions</a></li>
-                        <li><a href="./residency.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Artist
-                                Residency</a></li>
-                        <li><a href="./workshop.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Learning
-                                Labs</a></li>
+                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery</a></li>
                         <li><a href="./shop.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Gallery
-                                Shop</a></li>
+                                class="text-sm text-secondary hover:text-primary transition-colors">Shop</a></li>
+
+                        <li><a href="./facilities.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Facilities</a></li>
+                        <li><a href="./programmes.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Programmes</a></li>
                     </ul>
                 </div>
 
@@ -311,9 +339,9 @@
                         <li><a href="./press.html"
                                 class="text-sm text-secondary hover:text-primary transition-colors">Press &
                                 Media</a></li>
-                        <li><a href="./contact.html"
-                                class="text-sm text-secondary hover:text-primary transition-colors">Support
-                                Us</a></li>
+                        <li><a href="./events.html"
+                                class="text-sm text-secondary hover:text-primary transition-colors">Events & News</a>
+                        </li>
                         <li><a href="./contact.html"
                                 class="text-sm text-secondary hover:text-primary transition-colors">Contact</a>
                         </li>
